@@ -1,3 +1,9 @@
+<?php
+
+include 'conn.php';
+
+?>
+
 <html>
   <head>
       <title>AppsPages - Host, Showcase, and Manage Your Apps with Ease</title>
@@ -72,17 +78,46 @@
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
+<?php
 
+// Retrieve 12 random app details from the 'apps' table
+$query = "SELECT * FROM apps ORDER BY RANDOM() LIMIT 12";
+$result = pg_query($conn, $query);
+
+// Check if the query was successful
+if (!$result) {
+    die("Query failed: " . pg_last_error($conn));
+}
+
+// Fetch the app details as an associative array
+$appDetails = pg_fetch_all($result);
+
+// Check if there are any app details
+if (!$appDetails) {
+    echo "No app details found.";
+} else {
+    // Output the app details
+    foreach ($appDetails as $app) {
+        echo '
+          
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="' . $app['icon'] . '">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">' . $app['category'] . '</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">' . $app['name'] . '</h2>
+                <p class="mt-1">' . $app['downloads'] . '</p>
+              </div>
+            </div>
+          
+        ';
+    }
+}
+
+pg_close($conn);
+
+?>
     </div>
   </div>
 </section>
