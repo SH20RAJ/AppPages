@@ -29,12 +29,14 @@
       </span>
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-gray-900">First Link</a>
-      <a class="mr-5 hover:text-gray-900">Second Link</a>
-      <a class="mr-5 hover:text-gray-900">Third Link</a>
-      <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+      <a class="mr-5 hover:text-gray-900" href="/">Apps</a>
+      <a class="mr-5 hover:text-gray-900" href="/">Games</a>
+      <a class="mr-5 hover:text-gray-900" href="/">Categories</a>
+      <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+      <a class="mr-5 hover:text-gray-900" href="/">Features</a>
+      <a class="mr-5 hover:text-gray-900" href="/">Contact</a>
     </nav>
-    <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+    <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Submit
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
@@ -57,7 +59,7 @@
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img class="https://images.unsplash.com/photo-1611178673542-6277b00043bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFwcHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+      <img class="object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/photo-1600950058730-94e24bcdefc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGFwcHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
     </div>
   </div>
 </section>
@@ -68,82 +70,120 @@
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Top Apps</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Discover the Top Performing Apps in Our Store! We have carefully curated a collection of the most popular and highly rated apps that are making waves in the digital world. From innovative productivity solutions to addictive gaming experiences, our selection is sure to cater to your every need. Stay ahead of the curve and explore the best apps that our store has to offer. Find the perfect app to enhance your daily life and make the most out of your digital devices.</p>
     </div>
     <div class="flex flex-wrap -m-2">
       <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Holden Caulfield</h2>
-            <p class="text-gray-500">UI Designer</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/84x84">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Henry Letham</h2>
-            <p class="text-gray-500">CTO</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Oskar Blinde</h2>
-            <p class="text-gray-500">Founder</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/90x90">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">John Doe</h2>
-            <p class="text-gray-500">DevOps</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/94x94">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Martin Eden</h2>
-            <p class="text-gray-500">Software Engineer</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/98x98">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Boris Kitua</h2>
-            <p class="text-gray-500">UX Researcher</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/100x90">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Atticus Finch</h2>
-            <p class="text-gray-500">QA Engineer</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/104x94">
-          <div class="flex-grow">
-            <h2 class="text-gray-900 title-font font-medium">Alper Kamu</h2>
-            <p class="text-gray-500">System</p>
-          </div>
-        </div>
-      </div>
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">SnapChatClone</h2>
+      <p class="text-gray-500">TechGenius</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">FitnessTrackerPro</h2>
+      <p class="text-gray-500">FitLife Inc.</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">MusicStream</h2>
+      <p class="text-gray-500">TuneIn Corp.</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">Newsify</h2>
+      <p class="text-gray-500">Media Corp.</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">WeatherApp</h2>
+      <p class="text-gray-500">Forecast Systems</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">FinanceTracker</h2>
+      <p class="text-gray-500">MoneyWise</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">TaskMaster</h2>
+      <p class="text-gray-500">Productivity Inc.</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">PhotoEditorPro</h2>
+      <p class="text-gray-500">Imaginary Studios</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">LanguageLearner</h2>
+      <p class="text-gray-500">Polyglot Labs</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">SleepTracker</h2>
+      <p class="text-gray-500">DreamZ Inc.</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+  <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+    <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+    <div class="flex-grow">
+      <h2 class="text-gray-900 title-font font-medium">RecipeFinder</h2>
+      <p class="text-gray-500">Foodie Labs</p>
+    </div>
+  </div>
+</div>
+
       <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
         <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
           <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/108x98">
@@ -163,8 +203,10 @@
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Statics of AppsPages</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Welcome to the statistical overview of our app pages. Here, we present valuable insights and data related to the performance and engagement of our apps. These statistics provide a glimpse into the popularity, user feedback, and usage trends of our apps. Take a closer look at the numbers below:
+
+</p>
     </div>
     <div class="flex flex-wrap -m-4 text-center">
       <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -195,7 +237,7 @@
             <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
           </svg>
           <h2 class="title-font font-medium text-3xl text-gray-900">74</h2>
-          <p class="leading-relaxed">Files</p>
+          <p class="leading-relaxed">Apps</p>
         </div>
       </div>
       <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -204,7 +246,7 @@
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           <h2 class="title-font font-medium text-3xl text-gray-900">46</h2>
-          <p class="leading-relaxed">Places</p>
+          <p class="leading-relaxed">PageViews</p>
         </div>
       </div>
     </div>
@@ -218,8 +260,8 @@
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Recent Apps</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Discover our latest additions to the app family. We are excited to introduce the following apps that have been recently released and are now available for download</p>
     </div>
     <div class="flex flex-wrap -m-4">
       <div class="lg:w-1/3 sm:w-1/2 p-4">
@@ -330,4 +372,4 @@
 
     
   </body>
-</html> uo
+</html>
