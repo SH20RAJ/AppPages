@@ -20,12 +20,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+
+    
     <header class="text-gray-600 body-font">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
       <img src="logo.png" width="25px" class="mr-2"/>
       <span class="text-gray-900">Apps
-        <span class="px-2 h-12 font-semibold tracking-wider border-2 border-black bg-indigo-400 text-white" style="padding-bottom:4px">Pages<span>
+        <span class="px-2 h-12 font-semibold tracking-wider border-2 border-black bg-indigo-400 text-white" style="padding-bottom:4px">Pages</span>
       </span>
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
@@ -49,8 +51,8 @@
     <section class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Apps
-        <span class="px-2 h-12 font-semibold tracking-wider border-2 border-black bg-indigo-400 text-white" style="padding-bottom:4px">Pages<span>
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> Apps
+        <span class="px-2 h-12 font-semibold tracking-wider border-2 border-black bg-indigo-400 text-white" style="padding-bottom:4px">Pages</span>
       </h1>
       <p class="mb-8 leading-relaxed">Effortlessly showcase your apps to a wide audience with AppsPages. Host and manage your applications, share app links, and track app performance with powerful analytics tools.</p>
       <div class="flex justify-center">
@@ -62,7 +64,8 @@
       <img class="object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/photo-1600950058730-94e24bcdefc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGFwcHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
     </div>
   </div>
-</section>
+        
+ </section>
 
 
     
