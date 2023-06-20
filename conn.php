@@ -1,11 +1,21 @@
 <?php
+$servername = "srv1020.hstgr.io";
+$username = "u212553073_appspages";
+$password = "BZ6>qz1z*";
+$dbname = "u212553073_appspages";
 
-$databaseUrl = "postgres://default:WHLQC1tdcsA0@ep-weathered-bonus-818956.ap-southeast-1.postgres.vercel-storage.com:5432/verceldb";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Connect to the PostgreSQL database
-$conn = pg_connect($databaseUrl);
-
-// Check if the connection was successful
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+echo "Connected successfully";
+
+// Perform your database operations here
+
+// Close connection
+$conn->close();
+?>
