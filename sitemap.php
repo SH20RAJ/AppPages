@@ -6,23 +6,30 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <?php
-    function getURLs($dir, &$results = array()) {
-        $files = scandir($dir);
+    function extractURLs($pageURL) {
+        $pageContent = file_get_contents($pageURL);
 
-        foreach ($files as $key => $value) {
-            $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
-            if (!is_dir($path)) {
-                $results[] = "https://appspages.sh20raj.com" . substr($path, strlen($_SERVER['DOCUMENT_ROOT']));
-            } else if ($value != "." && $value != "..") {
-                getURLs($path, $results);
-                $results[] = "https://appspages.sh20raj.com" . substr($path, strlen($_SERVER['DOCUMENT_ROOT']));
+        $dom = new DOMDocument;
+        libxml_use_internal_errors(true);
+        $dom->loadHTML($pageContent);
+        libxml_clear_errors();
+
+        $urls = array();
+        $links = $dom->getElementsByTagName('a');
+
+        foreach ($links as $link) {
+            $url = $link->getAttribute('href');
+            if ($url && $url !== '#') {
+                $urls[] = "https://appspages.sh20raj.com" . $url;
             }
         }
 
-        return $results;
+        return $urls;
     }
 
-    $urls = getURLs($_SERVER['DOCUMENT_ROOT']);
+    // Example: Extract URLs from the homepage
+    $pageURL = "https://appspages.sh20raj.com/";
+    $urls = extractURLs($pageURL);
 
     foreach ($urls as $url) {
         echo '<url>';
