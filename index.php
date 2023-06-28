@@ -1,3 +1,7 @@
+<?php
+include "conn.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en" id="html" class="ap-open hfix" prefix="og: https://ogp.me/ns#">
   <head>
@@ -406,9 +410,9 @@
               </li>
             </ul>
             <div class="head_menu_s_foot d-lg-none">
-              <a href="https://an1.com/ru/" class="lang xsmf fbold" title="Russian">
+              <a href="Join" class="lang xsmf fbold" title="Russian">
                 <span class="minbtn">
-                  <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Russian </span>
+                  <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Login </span>
               </a>
               <div class="social" title="Read Us">
                 <a class="soc_tg" href="https://t.me/cxdiin" rel="noopener nofollow" target="_blank">
@@ -441,9 +445,9 @@
               <use xlink:href="#i__search"></use>
             </svg>
           </button>
-          <a href="https://an1.com/ru/" class="lang xsmf fbold" title="Russian">
+          <a href="Join" class="lang xsmf fbold" title="Russian">
             <span class="minbtn">
-              <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Russian </span>
+              <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Login </span>
           </a>
         </div>
       </header>
@@ -477,651 +481,81 @@
         <h1>Popular Apps</h1>
         <div class="content">
           <div class="app_list">
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-05/1684229427_stick-war-legacy.png" alt="Stick War: Legacy (MOD, Unlimited Gems)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/3381-stick-war-legacy-mod-apk-free.html" title="Stick War: Legacy (MOD, Unlimited Gems)">
-                        <span>Stick War: Legacy (MOD, Unlimited Gems)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Max Games Studios</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-3381">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:72%;">3.6</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '3381'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '3381'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '3381'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '3381'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '3381'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <?php
+// Retrieve the latest 20 uploaded apps data from the "apps" table
+$sql = "SELECT * FROM apps ORDER BY upload_time DESC LIMIT 20";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Loop through the result and fetch app data
+    while ($row = $result->fetch_assoc()) {
+        $appName = $row['app_name'];
+        $appCategory = $row['app_category'];
+        $appDescription = $row['app_description'];
+        $appVersion = $row['app_version'];
+        $appIcon = $row['app_icon'];
+        $appSize = $row['app_size'];
+        $packageName = $row['package_name'];
+        $screenshots = $row['screenshots'];
+        $appUrl = $row['app_url'];
+
+              // Use heredoc syntax to define the HTML code
+        $html = <<<HTML
+<div class="item">
+  <div class="item_app mod">
+    <div class="img">
+      <img src="$appIcon" alt="$appName" loading="lazy">
+    </div>
+    <div class="cont">
+      <div class="data">
+        <div class="name">
+          <a href="view/$packageName" title="$appName">
+            <span>$appName</span>
+          </a>
+        </div>
+        <div class="developer xsmf muted">Max Games Studios</div>
+      </div>
+      <div class="meta muted">
+        <div class="rate_star">
+          <div id="ratig-layer-3381">
+            <div class="rating">
+              <ul class="unit-rating">
+                <li class="current-rating" style="width:72%;">3.6</li>
+                <li>
+                  <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '3381'); return false;">1</a>
+                </li>
+                <li>
+                  <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '3381'); return false;">2</a>
+                </li>
+                <li>
+                  <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '3381'); return false;">3</a>
+                </li>
+                <li>
+                  <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '3381'); return false;">4</a>
+                </li>
+                <li>
+                  <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '3381'); return false;">5</a>
+                </li>
+              </ul>
             </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-02/1676553599_magic-tiles-3.png" alt="Magic Tiles 3 (MOD, Unlimited Money)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/4980-magic-tiles-3-mod.html" title="Magic Tiles 3 (MOD, Unlimited Money)">
-                        <span>Magic Tiles 3 (MOD, Unlimited Money)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">AMANOTES PTE LTD</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-4980">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:68%;">3.4</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '4980'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '4980'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '4980'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '4980'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '4980'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-05/1684838008_epic-battle-sim-2.png" alt="Epic Battle Simulator 2 (MOD, Unlimited Money)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/5636-epic-battle-simulator-2-mod.html" title="Epic Battle Simulator 2 (MOD, Unlimited Money)">
-                        <span>Epic Battle Simulator 2 (MOD, Unlimited Money)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Rappid Studios</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-5636">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:68%;">3.4</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '5636'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '5636'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '5636'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '5636'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '5636'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-05/1685357678_zombie-hunter-sniper.jpg" alt="Zombie Hunter Sniper (MOD, Unlimited Money)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/1719-zombie-hunter-apocalypse-mod.html" title="Zombie Hunter Sniper (MOD, Unlimited Money)">
-                        <span>Zombie Hunter Sniper (MOD, Unlimited Money)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Viva Games Studios</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-1719">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:78%;">3.9</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '1719'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '1719'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '1719'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '1719'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '1719'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-01/1672907270_zepeto.png" alt="ZEPETO" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/6960-zepeto.html" title="ZEPETO">
-                        <span>ZEPETO</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Naver Z Corporation</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-6960">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:74%;">3.7</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '6960'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '6960'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '6960'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '6960'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '6960'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-04/1681477124_ryuko-legend.jpg" alt="Ryuko Legend of Shadow Hunter (MOD, Immortality)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/6997-ryuko-legend-of-shadow-hunter-mod.html" title="Ryuko Legend of Shadow Hunter (MOD, Immortality)">
-                        <span>Ryuko Legend of Shadow Hunter (MOD, Immortality)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Monstermob USA</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-6997">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:74%;">3.7</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '6997'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '6997'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '6997'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '6997'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '6997'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-04/1682517559_drag-racing.jpg" alt="Drag Racing (MOD, Unlimited Money)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/2026-drag-racing-mod.html" title="Drag Racing (MOD, Unlimited Money)">
-                        <span>Drag Racing (MOD, Unlimited Money)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Creative Mobile Games</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-2026">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:76%;">3.8</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '2026'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '2026'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '2026'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '2026'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '2026'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-03/1679250538_going-balls.png" alt="Going Balls (MOD, Unlimited Coins)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/7184-going-balls-mod.html" title="Going Balls (MOD, Unlimited Coins)">
-                        <span>Going Balls (MOD, Unlimited Coins)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Supersonic Studios LTD</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-7184">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:78%;">3.9</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '7184'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '7184'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '7184'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '7184'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '7184'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-06/1687764776_subway-surfers.png" alt="Subway Surfers (MOD, Unlimited Coins/Keys)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/4683-subway-surfers-mod-apk-7.html" title="Subway Surfers (MOD, Unlimited Coins/Keys)">
-                        <span>Subway Surfers (MOD, Unlimited Coins/Keys)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">SYBO Games</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-4683">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:70%;">3.5</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '4683'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '4683'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '4683'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '4683'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '4683'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-06/1687688326_flip-diving.png" alt="Flip Diving (MOD, Unlimited Coins)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/4276-flip-diving-mod.html" title="Flip Diving (MOD, Unlimited Coins)">
-                        <span>Flip Diving (MOD, Unlimited Coins)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">MotionVolt Games Ltd</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-4276">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:78%;">3.9</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '4276'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '4276'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '4276'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '4276'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '4276'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-03/1678356426_looney-tunes.png" alt="Looney Tunes World of Mayhem" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/5222-looney-tunes-world-of-mayhem.html" title="Looney Tunes World of Mayhem">
-                        <span>Looney Tunes World of Mayhem</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Scopely</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-5222">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:72%;">3.6</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '5222'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '5222'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '5222'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '5222'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '5222'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-04/1682880209_words-of-wonders.jpg" alt="Words of Wonders (MOD, Unlimited Money)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/6137-words-of-wonders-mod.html" title="Words of Wonders (MOD, Unlimited Money)">
-                        <span>Words of Wonders (MOD, Unlimited Money)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">Fugo Games</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-6137">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:74%;">3.7</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '6137'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '6137'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '6137'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '6137'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '6137'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-05/1683461919_bouncemasters.png" alt="Bouncemasters! (MOD, Unlimited Money)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/5006-bouncemasters-mod-apk.html" title="Bouncemasters! (MOD, Unlimited Money)">
-                        <span>Bouncemasters! (MOD, Unlimited Money)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">CASUAL AZUR GAMES</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-5006">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:70%;">3.5</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '5006'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '5006'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '5006'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '5006'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '5006'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-06/1685874126_candy-crush-friends-saga.png" alt="Candy Crush Friends Saga (MOD, Lives/Moves)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/5117-candy-crush-friends-saga-mod.html" title="Candy Crush Friends Saga (MOD, Lives/Moves)">
-                        <span>Candy Crush Friends Saga (MOD, Lives/Moves)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">King</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-5117">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:72%;">3.6</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '5117'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '5117'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '5117'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '5117'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '5117'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item_app mod">
-                <div class="img">
-                  <img src="https://an1.com/uploads/posts/2023-06/1685874126_candy-crush-friends-saga.png" alt="Candy Crush Friends Saga (MOD, Lives/Moves)" loading="lazy">
-                </div>
-                <div class="cont">
-                  <div class="data">
-                    <div class="name">
-                      <a href="https://an1.com/5117-candy-crush-friends-saga-mod.html" title="Candy Crush Friends Saga (MOD, Lives/Moves)">
-                        <span>Candy Crush Friends Saga (MOD, Lives/Moves)</span>
-                      </a>
-                    </div>
-                    <div class="developer xsmf muted">King</div>
-                  </div>
-                  <div class="meta muted">
-                    <div class="rate_star">
-                      <div id="ratig-layer-5117">
-                        <div class="rating">
-                          <ul class="unit-rating">
-                            <li class="current-rating" style="width:72%;">3.6</li>
-                            <li>
-                              <a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '5117'); return false;">1</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '5117'); return false;">2</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '5117'); return false;">3</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Good" class="r4-unit" onclick="doRate('4', '5117'); return false;">4</a>
-                            </li>
-                            <li>
-                              <a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '5117'); return false;">5</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+HTML;
+
+        // Output the HTML code
+        echo $html;
+    }
+} else {
+    echo "No apps found.";
+}
+
+?>
+            
+
             <!--<div class="navigation open" id="navcollapse"><div class="collapse"><div class="navigation_ext"><span><svg class="i__arrowleft"><use xlink:href="#i__arrowleft"></use></svg><span class="vhide">Back</span></span><div class="pages"><span>1</span><a href="https://an1.com/games/page/2/">2</a><a href="https://an1.com/games/page/3/">3</a><a href="https://an1.com/games/page/4/">4</a><span class="nav_ext">...</span><a href="https://an1.com/games/page/258/">258</a></div><a href="https://an1.com/games/page/2/"><svg class="i__arrowright"><use xlink:href="#i__arrowright"></use></svg><span class="vhide">Next</span></a></div></div><div class="navigation_in"><div id="ajax-next-page" class="nav_more"><a href="https://an1.com/games/page/2/"><span class="btn btn-dark"><span class="uppercase fbold smf">More...</span></span></a></div><button id="navcollapse_btn" class="btn uppercase smf" type="button"><span class="fbold">Page 1</span> of 258 <i class="arrow_drop"></i></button></div></div>-->
           </div>
         </div>
