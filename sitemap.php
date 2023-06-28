@@ -8,24 +8,27 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
     <?php
     function extractURLs($pageURL) {
         $pageContent = file_get_contents($pageURL);
-
+    
         $dom = new DOMDocument;
         libxml_use_internal_errors(true);
         $dom->loadHTML($pageContent);
         libxml_clear_errors();
-
+    
+        $baseUrl = "https://appspages.sh20raj.com";
+    
         $urls = array();
         $links = $dom->getElementsByTagName('a');
-
+    
         foreach ($links as $link) {
             $url = $link->getAttribute('href');
-            if ($url && $url !== '#') {
-                $urls[] = "https://appspages.sh20raj.com" . $url;
+            if ($url && $url !== '#' && strpos($url, $baseUrl) !== false) {
+                $urls[] = $url;
             }
         }
-
+    
         return $urls;
     }
+    
 
     // Example: Extract URLs from the homepage
     $pageURL = "https://appspages.sh20raj.com/";
