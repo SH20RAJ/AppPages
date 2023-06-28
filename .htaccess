@@ -1,8 +1,6 @@
 RewriteEngine On
 
-# Redirect "/view?p=package_name" to "/view/package_name"
-RewriteCond %{QUERY_STRING} ^p=(.+)$
-RewriteRule ^view$ /view/%1 [L,R=301]
+
 
 # Rewrite "/view/package_name" to "/view?p=package_name"
-RewriteRule ^view/([^/]+)$ /view?p=$1 [L]
+RewriteRule /view?p=$1 ^view/([^/]+)$ [L]
