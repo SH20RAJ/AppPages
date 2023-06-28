@@ -49,8 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
             // Password is correct, proceed with login
             session_start();
             $_SESSION["username"] = $username;
+            $_SESSION["uploader_id"] = $row["user_id"];
             // Redirect the user to a dashboard or home page
-            header("Location: ../cpanel");
+            header("Location: ../cpanel/");
             exit(); // Terminate the script to prevent further execution
         } else {
             // Password is incorrect

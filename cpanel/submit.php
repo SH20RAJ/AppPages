@@ -1,7 +1,6 @@
+<div class="submit_section">
 <?php
-session_start();
-include "../conn.php";
-
+$uploaderId = $_SESSION['username'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $appName = $_POST['app_name'];
@@ -14,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $packageName = $_POST['package_name'];
     $screenshotUrls = $_POST['screenshots'];
     $appUrl = $_POST['app_url'];
-    $uploaderId = '2';
+    $uploaderId = $_SESSION['uploader_id'];
 
     // Split the screenshot URLs by newline character and trim any leading/trailing whitespace
     $screenshotUrlsArray = array_map('trim', explode("\n", $screenshotUrls));
@@ -36,15 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$conn->close();
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>App Upload Form</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
 
         h1 {
             text-align: center;
@@ -83,15 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             cursor: pointer;
         }
     </style>
-</head>
-<body>
+
     <h1>App Upload Form</h1>
-    <?php
-    // Check if the user is logged in
-    if (!isset($_SESSION['username'])) {
-        echo '<p>Please log in to upload an app.</p>';
-    } else {
-        ?>
         <form action="" method="post" enctype="multipart/form-data">
             <label for="app_name">App Name:</label>
             <input type="text" name="app_name" id="app_name" required>
@@ -145,8 +130,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <input type="submit" value="Upload App">
         </form>
-    <?php
-    }
-    ?>
-</body>
-</html>
+</div>

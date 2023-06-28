@@ -5,18 +5,19 @@ include "conn.php";
 <!DOCTYPE html>
 <html lang="en" id="html" class="ap-open hfix" prefix="og: https://ogp.me/ns#">
   <head>
+    <meta name="google-site-verification" content="dnuxRFPlXTc47CbbYyiaq8eTi_hQZ5StdvZMw6fLm9A" />
     <meta charset="utf-8" />
-    <title>News, free games and program for Android</title>
+    <title>AppsPages</title>
     <meta name="description" content="Free Games and Programs, you can download for free, a lot popular games with MOD for Android." />
     <meta name="keywords" content="programs for android, games for android, android1, android 1, android 1 com, mod games, android, mod apk, apk" />
     <link rel="search" type="application/opensearchdescription+xml" href="https://an1.com/engine/opensearch.php" title="News, free games and program for Android" />
-    <link rel="alternate" hreflang="x-default" href="https://an1.com/" />
-    <link rel="alternate" hreflang="en" href="https://an1.com/" />
-    <link rel="alternate" hreflang="ru" href="https://an1.com/ru/" />
+    <link rel="alternate" hreflang="x-default" href="" />
+    <link rel="alternate" hreflang="en" href="" />
+    <link rel="alternate" hreflang="ru" href="" />
     <meta property="og:site_name" content="AN1.com" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://an1.com/" />
-    <meta property="og:image" content="https://an1.com/templates/an1/images/favicon/apple-touch-icon.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="logo.png" />
     <meta property="og:image:width" content="180" />
     <meta property="og:image:height" content="180" />
     <meta property="og:title" content="Free games and programs for android" />
@@ -26,9 +27,9 @@ include "conn.php";
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=5.0, width=device-width" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://an1.com/templates/an1/images/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://an1.com/templates/an1/images/favicon/f32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://an1.com/templates/an1/images/favicon/f16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-config" content="https://an1.com/templates/an1/images/favicon/browserconfig.xml" />
     <link rel="manifest" href="https://an1.com/templates/an1/images/favicon/manifest.json" />
@@ -43,16 +44,12 @@ include "conn.php";
   <body>
     <div class="header">
       <header>
+
         <h1 class="logo">
-          <a href="/" title="An1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 64" width="128" height="64">
-              <path fill="#54b247" d="M91.15,15.83H80l12.29,28.3h11.19Z"></path>
-              <path fill="#68cb5b" d="M84.6,30.91l6.55-15.08H80L73.41,30.91Z"></path>
-              <path fill="#63bf60" d="M91.15,15.83H80l5.59,12.89Z"></path>
-              <path class="logo-t-fill" d="M65.52,44.13v-11a5.45,5.45,0,0,0-10.9,0v11H49v-11a11,11,0,0,1,22.06,0v11Zm-25,0V42.69a11,11,0,1,1,5.59-9.6v11Zm-10.89-11a5.45,5.45,0,1,0,10.89,0h0a5.45,5.45,0,0,0-10.89,0Z"></path>
-            </svg>
-            <span class="vhide">AN1</span>
-          </a>
+          <div class="logo">
+         <img src="../logo.png" style="width:40px;"/>
+       </div>
+          
         </h1>
         <button class="head_menu_btn d-block d-lg-none" type="button" aria-label="Menu">
           <span class="butterbrod">
@@ -410,7 +407,7 @@ include "conn.php";
               </li>
             </ul>
             <div class="head_menu_s_foot d-lg-none">
-              <a href="Join" class="lang xsmf fbold" title="Russian">
+              <a href="Join" class="lang xsmf fbold" title="Dashboard">
                 <span class="minbtn">
                   <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Login </span>
               </a>
@@ -445,9 +442,9 @@ include "conn.php";
               <use xlink:href="#i__search"></use>
             </svg>
           </button>
-          <a href="Join" class="lang xsmf fbold" title="Russian">
+          <a href="cpanel/" class="lang xsmf fbold" title="Russian">
             <span class="minbtn">
-              <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Login </span>
+              <i class="flag" style="background-image: url('https://cdn.icon-icons.com/icons2/506/PNG/512/cloud_icon-icons.com_49310.png');"></i> Dashboard </span>
           </a>
         </div>
       </header>
@@ -509,7 +506,7 @@ if ($result->num_rows > 0) {
     <div class="cont">
       <div class="data">
         <div class="name">
-          <a href="view/$packageName" title="$appName">
+          <a href="view?p=$packageName" title="$appName">
             <span>$appName</span>
           </a>
         </div>
