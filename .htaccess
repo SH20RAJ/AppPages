@@ -1,6 +1,0 @@
-RewriteEngine On
-
-
-
-# Rewrite "/view/package_name" to "/view?p=package_name"
-RewriteRule /view?p=$1 ^view/([^/]+)$ [L]
