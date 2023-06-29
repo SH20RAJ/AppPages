@@ -481,7 +481,7 @@ include "conn.php";
         <?php
 $url = 'https://appspages.sh20raj.com/api/aptoide.php';  // Replace with the URL of your JSON file
 // Fetch the JSON data
-$jsonData = file_get_contents($url);
+ $jsonData = file_get_contents($url);
 
 // Decode the JSON data
  $data = json_decode($jsonData, true);  // Set the second parameter to 'true' for associative array
@@ -491,21 +491,15 @@ $topAppsBundle = $data['topAppsBundle']['list'];
 
 // Iterate through each app and display the details
 foreach ($topAppsBundle as $app) {
-    $appName = $app['name'];
-    $packageName = $app['package'];
-    $appIcon = $app['icon'];
-    $developer = $app['downloads'];
-    $rating = $app['score'];
-    $uname = $app['uname'];
+    $appName = $app['']
+    $packageName = $app['']
+    $appIcon = $app['']
+    $developer = $app['']
+    $rating = $app['']
 
 
  // Use heredoc syntax to define the HTML code
 $html = <<<HTML
-  <style>
-  .item_app.mod .meta::before {
-    content: "Download";
-}
-  </style>
 <div class="item">
   <div class="item_app mod">
     <div class="img">
@@ -514,7 +508,7 @@ $html = <<<HTML
     <div class="cont">
       <div class="data">
         <div class="name">
-          <a href="app?p=$uname" title="$appName">
+          <a href="view?p=$packageName" title="$appName">
             <span>$appName</span>
           </a>
         </div>
