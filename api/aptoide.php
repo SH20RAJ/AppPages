@@ -28,6 +28,14 @@ if (isset($matches[1])) {
     
     // Return the content as JSON
     echo json_encode($decodedContent,JSON_PRETTY_PRINT);
+} elseif(isset($_GET['search'])){
+// Fetch the JSON data
+$jsonData = file_get_contents($url);
+// Decode the JSON data
+$data = json_decode($jsonData, true);
+header('Content-Type: application/json');
+echo json_encode($data,JSON_PRETTY_PRINT);
+  
 } else {
     // If the script tag is not found
     header('Content-Type: application/json');
