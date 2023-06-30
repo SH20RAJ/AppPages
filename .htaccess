@@ -3,6 +3,8 @@ RewriteEngine On
 
 # Redirect /search/pubg to /search.php?q=pubg
 RewriteRule ^search/([^/]+)$ /search.php?q=$1 [QSA,L]
+RewriteRule ^search/([^/]+)$ /search/?q=$1 [QSA,L]
+
 RewriteRule ^category/([^/]+)$ /category.php?q=$1 [QSA,L]
 
 # Redirect /search?p=pubg to /search/pubg

@@ -9,6 +9,10 @@ if(isset($search)){
   $url = "https://web-api-cache.aptoide.com/search?query=".$search."&country=IN&mature=false";
 }
 
+if(isset($cate)){
+  $url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1111&sort=sort:web:downloads&origin=SITE&group_name='.$cate.'&store_name=aptoide-web';
+}
+
 if(!$url){
   if(isset($category)){
   $url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1000&sort=downloads7d&origin=SITE&store_name=apps&group_name='.$category;

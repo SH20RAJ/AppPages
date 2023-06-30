@@ -49,99 +49,45 @@
                       <use xlink:href="#i__arrowleft"></use>
                     </svg>
                   </button>
-                  <ul>
-                    <li class="d-lg-none">
-                      <a class="fbold" href="/games/">All Games</a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/action/">
-                        <span>Action (699)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/cards/">
-                        <span>Cards (35)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/arcade/">
-                        <span>Arcade (511)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/rpg/">
-                        <span>RPG (4)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/shooter/">
-                        <span>Shooter (6)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/casual/">
-                        <span>Casual (289)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/strategy/">
-                        <span>Strategy (275)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/sport/">
-                        <span>Sport (194)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/simulations/">
-                        <span>Simulations (416)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/race/">
-                        <span>Race (299)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/desktop/">
-                        <span>Desktop (32)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/logical/">
-                        <span>Logical (153)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/quests/">
-                        <span>Quests (8)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/adventure/">
-                        <span>Adventure (256)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/music/">
-                        <span>Music (30)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/role-playing/">
-                        <span>Role Playing (246)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://an1.com/games/puzzle/">
-                        <span>Puzzle (157)</span>
-                      </a>
-                    </li>
-                  </ul>
+                  <?php
+$menuItems = [
+    ["text" => "All Games", "url" => "/games/"],
+    ["text" => "Action", "url" => "../games/action/"],
+    ["text" => "Cards", "url" => "../games/cards/"],
+    ["text" => "Arcade", "url" => "../games/arcade/"],
+    ["text" => "RPG", "url" => "../games/rpg/"],
+    ["text" => "Shooter", "url" => "../games/shooter/"],
+    ["text" => "Casual", "url" => "../games/casual/"],
+    ["text" => "Strategy", "url" => "../games/strategy/"],
+    ["text" => "Sport", "url" => "../games/sport/"],
+    ["text" => "Simulations", "url" => "../games/simulations/"],
+    ["text" => "Race", "url" => "../games/race/"],
+    ["text" => "Desktop", "url" => "../games/desktop/"],
+    ["text" => "Logical", "url" => "../games/logical/"],
+    ["text" => "Quests", "url" => "../games/quests/"],
+    ["text" => "Adventure", "url" => "../games/adventure/"],
+    ["text" => "Music", "url" => "../games/music/"],
+    ["text" => "Role Playing", "url" => "../games/role-playing/"],
+    ["text" => "Puzzle", "url" => "../games/puzzle/"]
+];
+?>
+
+<ul>
+    <li class="d-lg-none">
+        <a class="fbold" href="<?php echo $menuItems[0]['url']; ?>"><?php echo $menuItems[0]['text']; ?></a>
+    </li>
+    <?php for ($i = 1; $i < count($menuItems); $i++) { ?>
+        <li>
+            <a href="<?php echo $menuItems[$i]['url']; ?>">
+                <span><?php echo $menuItems[$i]['text']; ?></span>
+            </a>
+        </li>
+    <?php } ?>
+</ul>
+
                 </div>
               </li>
-              <li>
+             <!-- <li>
                 <a class="xsmf fbold" href="/programmy/">
                   <i>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -163,88 +109,88 @@
                       <a class="fbold" href="/programmy/">All Programs</a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/business-amp-finance/">
+                      <a href="../programmy/business-amp-finance/">
                         <span>Business &amp; Finance (11)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/health-and-sport/">
+                      <a href="../programmy/health-and-sport/">
                         <span>Health and Sport (14)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/internet/">
+                      <a href="../programmy/internet/">
                         <span>Internet (12)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/social/">
+                      <a href="../programmy/social/">
                         <span>Social (13)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/music-and-video/">
+                      <a href="../programmy/music-and-video/">
                         <span>Music and Video (32)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/personalization/">
+                      <a href="../programmy/personalization/">
                         <span>Personalization (36)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/education/">
+                      <a href="../programmy/education/">
                         <span>Education (9)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/office/">
+                      <a href="../programmy/office/">
                         <span>Office (7)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/weather/">
+                      <a href="../programmy/weather/">
                         <span>Weather (4)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/travel/">
+                      <a href="../programmy/travel/">
                         <span>Travel (16)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/camera/">
+                      <a href="../programmy/camera/">
                         <span>Camera (18)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/photography/">
+                      <a href="../programmy/photography/">
                         <span>Photography (25)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/file-managers/">
+                      <a href="../programmy/file-managers/">
                         <span>File Managers (3)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/translators/">
+                      <a href="../programmy/translators/">
                         <span>Translators (1)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/link/">
+                      <a href="../programmy/link/">
                         <span>Link (23)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/programmy/tools/">
+                      <a href="../programmy/tools/">
                         <span>Tools (139)</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-              </li>
+              </li>-->
               <li>
                 <a class="xsmf fbold" href="/news/">
                   <i>
@@ -267,22 +213,22 @@
                       <a class="fbold" href="/news/">All News</a>
                     </li>
                     <li>
-                      <a href="https://an1.com/news/android/">
+                      <a href="../news/android/">
                         <span>Android (239)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/news/apple/">
+                      <a href="../news/apple/">
                         <span>Apple (148)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/news/novelty/">
+                      <a href="../news/novelty/">
                         <span>Novelty (1119)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/news/windows/">
+                      <a href="../news/windows/">
                         <span>Windows (10)</span>
                       </a>
                     </li>
@@ -312,22 +258,22 @@
                       <a class="fbold" href="/articles/">All Articles</a>
                     </li>
                     <li>
-                      <a href="https://an1.com/articles/interview/">
+                      <a href="../articles/interview/">
                         <span>Interview (1)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/articles/useful-tips/">
+                      <a href="../articles/useful-tips/">
                         <span>Useful Tips (9)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/articles/history/">
+                      <a href="../articles/history/">
                         <span>History (4)</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://an1.com/articles/reports/">
+                      <a href="../articles/reports/">
                         <span>Reports (6)</span>
                       </a>
                     </li>
@@ -351,10 +297,10 @@
             </ul>
             <ul class="head_menu_s d-lg-none">
               <li>
-                <a href="/dmca.html">DMCA Policy</a>
+                <a href="/dmca.php">DMCA Policy</a>
               </li>
               <li>
-                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/privacy-policy.php">Privacy Policy</a>
               </li>
               <li>
                 <a href="/index.php?do=feedback">Feedback</a>
@@ -363,7 +309,7 @@
             <div class="head_menu_s_foot d-lg-none">
               <a href="Join" class="lang xsmf fbold" title="Dashboard">
                 <span class="minbtn">
-                  <i class="flag" style="background-image: url('https://an1.com/templates/an1/images/ru.png');"></i> Login </span>
+                  <i class="flag" style="background-image: url('../templates/an1/images/ru.png');"></i> Login </span>
               </a>
               <div class="social" title="Read Us">
                 <a class="soc_tg" href="https://t.me/cxdiin" rel="noopener nofollow" target="_blank">
