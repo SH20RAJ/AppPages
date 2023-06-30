@@ -64,9 +64,12 @@ $menuItems = [
     ["text" => "Board", "url" => "../games/board/"],
     ["text" => "Simulation", "url" => "../games/simulation/"],
     ["text" => "Adventure", "url" => "../games/adventure/"],
+    ["text" => "Trivia", "url" => "../games/trivia/"],
     ["text" => "Music", "url" => "../games/music/"],
     ["text" => "Brain", "url" => "../games/brain/"],
-    ["text" => "Puzzle", "url" => "../games/puzzle/"]
+    ["text" => "Puzzle", "url" => "../games/puzzle/"],
+    ["text" => "Brain Puzzle", "url" => "../games/brain-puzzle/"],
+    ["text" => "Family", "url" => "../games/family/"]
 ];
 ?>
 
