@@ -3,7 +3,7 @@
 
         <h1 class="logo">
           <div class="logo">
-         <img src="../logo.png" style="width:40px;margin-top:10px;"/>
+         <a href="../"><img src="../logo.png" style="width:40px;margin-top:10px;"/></a>
        </div>
           
         </h1>
