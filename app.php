@@ -54,7 +54,7 @@ if(isset($_GET['p'])){
      <link rel="icon" href="<?php echo $appIcon;?>"/>
    </head>
    <body>
-     <?php include "../assets/nav.php" ?>
+     <?php include "assets/nav.php" ?>
       <div class="page" style="height: auto !important;">
          <div class="wrp" style="height: auto !important;">
             <div class="content no-toolbar" style="height: auto !important;">
