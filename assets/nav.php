@@ -53,7 +53,7 @@
 $menuItems = [
     ["text" => "All Games", "url" => "/games/"],
     ["text" => "Action", "url" => "../games/action/"],
-    ["text" => "Cards", "url" => "../games/cards/"],
+    ["text" => "Card", "url" => "../games/card/"],
     ["text" => "Arcade", "url" => "../games/arcade/"],
     ["text" => "RPG", "url" => "../games/rpg/"],
     ["text" => "Shooter", "url" => "../games/shooter/"],
@@ -62,7 +62,7 @@ $menuItems = [
     ["text" => "Sport", "url" => "../games/sport/"],
     ["text" => "Simulations", "url" => "../games/simulations/"],
     ["text" => "Adventure", "url" => "../games/adventure/"],
-    ["text" => "Music", "url" => "../games/music/"]
+    ["text" => "Music", "url" => "../games/music/"],
     ["text" => "Puzzle", "url" => "../games/puzzle/"]
 ];
 ?>
