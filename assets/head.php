@@ -11,12 +11,12 @@
     <meta property="og:site_name" content="AN1.com" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
-    <meta property="og:image" content="logo.png" />
+    <meta property="og:image" content="https://appspages.online/logo.png" />
     <meta property="og:image:width" content="180" />
     <meta property="og:image:height" content="180" />
     <meta property="og:title" content="Free games and programs for android" />
     <meta property="og:description" content="Free Games and Programs, you can download for free, a lot popular games with MOD for Android." />
-    <link rel="canonical" href="https://an1.com/" />
+    <link rel="canonical" href="https://appspages.online/" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=5.0, width=device-width" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,5 +33,5 @@
     <link rel="preload" href="https://an1.com/templates/an1/css/styles.css?v=6.0" as="style" />
     <link href="https://an1.com/templates/an1/css/styles.css?v=6.0" type="text/css" rel="stylesheet" />
     <script async="" src="https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"></script>
-    <script async="" src="jjhttps://an1.com/engine/ajax/vars.php"></script>
+
   </head>

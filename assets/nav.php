@@ -3,7 +3,7 @@
 
         <h1 class="logo">
           <div class="logo">
-         <a href="../"><img src="../logo.png" style="width:40px;margin-top:10px;"/></a>
+         <a href="../"><img src="https://appspages.online/logo.png" style="width:40px;margin-top:10px;"/></a>
        </div>
           
         </h1>
