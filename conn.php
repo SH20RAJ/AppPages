@@ -8,8 +8,5 @@ $dbname = "u212553073_appspages";
 $conn = new mysqli($servername, $username, $password, $dbname);
  $baseurl = 'https://appspages.online/';
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 ?>
