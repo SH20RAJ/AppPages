@@ -20,7 +20,9 @@ if(!$url){
   $url = 'https://ws2-cache.aptoide.com/api/7/listApps?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=5000&sort=trending60d&origin=SITE&store_name=aptoide-web';
 }
 }
-
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+$host = $_SERVER['HTTP_HOST'];
+$baseurl = $protocol . $host;
 
 // Replace with the URL of your JSON file
 // Fetch the JSON data
@@ -58,7 +60,7 @@ $html = <<<HTML
     <div class="cont">
       <div class="data">
         <div class="name">
-          <a href="../app?p=$uname" title="$appName">
+          <a href="$baseurl/app/$uname" title="$appName">
             <span>$appName</span>
           </a>
         </div>
