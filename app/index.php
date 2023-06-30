@@ -1,17 +1,38 @@
 <?php
+
+echo $url = 'https://appspages.online/api/aptoide.php?app_id='.$_GET['p'];
+// Replace with the URL of your JSON file
+// Fetch the JSON data
+
+function bytesToMB($bytes) {
+    $mb = $bytes / (1024 * 1024); // Convert bytes to megabytes
+    $rounded = round($mb, 1); // Round off to 1 decimal place
+    return $rounded;
+}
+
+
+$jsonData = file_get_contents($url);
+
+// Decode the JSON data
+ $data = json_decode($jsonData, true);  // Set the second parameter to 'true' for associative array
+//$row = $data['props']['apps'];
+
+$row = $data['props']['app'];
+
+
 if(isset($_GET['p'])){
-        $appName = $row["app_name"];
-        $appCategory = $row["app_category"];
-        $appDesc = $row["app_description"];
-        $appVersion = $row["app_version"];
-        $appIcon = $row["app_icon"];
-        $appSize = bytesToMB($row["app_size"]);
-        $packageName = $row["package_name"];
-        $screenshots = explode(",", $row["screenshots"]);
-        $appUrl = $row["app_url"];
+        $appName = $row["name"];
+        $appCategory = "Apps";//$row["app_category"];
+        $appDesc = $row['media']["description"];
+        $appVersion = $row['file'["vername"];
+        $appIcon = $row["icon"];
+        $appSize = bytesToMB($row["size"]);
+        $packageName = $row["package"];
+        $screenshots = $row["screenshots"];
+        $appUrl = $row["file"]['path'];
         $appplat = $row["supported_platforms"];
-        $time = $row["upload_time"];
-        $downloads = $row["downloads"];
+        $time = $row["updated"];
+        $downloads = $row['stats']["downloads"];
   
 } else {
   
