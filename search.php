@@ -1,7 +1,8 @@
 <?php
 include "conn.php";
 
-function loadapps($title,$category,$url){
+function loadsearch($search){
+$title = 'Search Result : ';
 include 'assets/loadapps.php';
 }
 
@@ -12,10 +13,11 @@ include "assets/head.php";
   echo "<body>";
 
 include "assets/nav.php";
-include 'assets/main_hero.php';
+//include 'assets/main_hero.php';
 
-loadapps("Must Have",'must-have',0);
-loadapps("Apps",0,0);
+//loadapps("Must Have",'must-have',0);
+loadsearch('PUBG');
+
 
 
 //include 'assets/loaddbapps.php';
