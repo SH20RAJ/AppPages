@@ -15,13 +15,16 @@
         <div class="wrp">
           <ul class="foot_menu">
             <li>
-              <a href="/dmca.html">DMCA Policy</a>
+              <a href="/assets/contact.php">DMCA Policy</a>
             </li>
             <li>
-              <a href="/privacy-policy.html">Privacy Policy</a>
+              <a href="/assets/privacy-policy.php">Privacy Policy</a>
             </li>
             <li>
-              <a href="/index.php?do=feedback">Feedback</a>
+              <a href="/assets/tos.php">Terms of Service </a>
+            </li>
+            <li>
+              <a href="/assets/contact.php">Feedback</a>
             </li>
           </ul>
           <div class="social" title="Read Us">
