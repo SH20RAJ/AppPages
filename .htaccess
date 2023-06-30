@@ -5,12 +5,14 @@ RewriteEngine On
 RewriteRule ^search/([^/]+)$ /search.php?q=$1 [QSA,L]
 RewriteRule ^search/([^/]+)$ /search/?q=$1 [QSA,L]
 
-RewriteRule ^games/([^/]+)$ /games.php?q=$1 [QSA,L]
-
 # Redirect /search?p=pubg to /search/pubg
 RewriteCond %{QUERY_STRING} ^p=(.*)$
 RewriteRule ^search$ /search/%1? [R=301,L]
 
+# Redirect /games.php?q=action to /games/action
+RewriteCond %{QUERY_STRING} ^q=(.*)$
+RewriteRule ^games\.php$ /games/%1? [R=301,L]
 
 ErrorDocument 404 /index.php
+
 
