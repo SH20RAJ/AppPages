@@ -4,3 +4,4 @@ RewriteRule app/(.*)$ app.php/?p=$1
 
 RewriteRule ^games/(.*)/$ /games.php?q=$1 [L]
 
+ErrorDocument 404 /index.php
