@@ -24,6 +24,8 @@ $jsonData = file_get_contents($url);
 
 // Decode the JSON data
  $data = json_decode($jsonData, true);  // Set the second parameter to 'true' for associative array
+$count = $data['datalist']['count'];
+
 $data = $data['datalist']['list'];
 
 

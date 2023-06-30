@@ -12,6 +12,8 @@ include "assets/head.php";
   echo "<body>";
 
 include "assets/nav.php";
+include "assets/search.php";
+
 include 'assets/main_hero.php';
 
 loadapps("Must Have",'must-have',0);

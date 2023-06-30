@@ -3,7 +3,7 @@
 
         <h1 class="logo">
           <div class="logo">
-         <img src="../logo.png" style="width:40px;"/>
+         <img src="../logo.png" style="width:40px;margin-top:10px;"/>
        </div>
           
         </h1>
@@ -15,10 +15,8 @@
           </span>
         </button>
         <div class="hmenu">
-          <button class="btn-close hmenu_close d-block d-lg-none" type="button">
-            <svg class="i__close">
-              <use xlink:href="#i__close"></use>
-            </svg>
+          <button class="btn-close hmenu_close d-block d-lg-none" type="button" onclick="document.getElementById('html').classList.add('qs');">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
           </button>
           <div class="head_menu">
             <ul class="head_menu_f">
@@ -394,9 +392,7 @@
             </svg>
           </button>
           <button id="qsearch_btn" class="qsearch tool-btn" aria-label="Search">
-            <svg width="24" height="24">
-              <use xlink:href="#i__search"></use>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
           </button>
           <a href="cpanel/" class="lang xsmf fbold" title="Russian">
             <span class="minbtn">
