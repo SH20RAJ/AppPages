@@ -5,7 +5,7 @@ RewriteEngine On
 RewriteRule ^search/([^/]+)$ /search.php?q=$1 [QSA,L]
 RewriteRule ^search/([^/]+)$ /search/?q=$1 [QSA,L]
 
-RewriteRule ^category/([^/]+)$ /category.php?q=$1 [QSA,L]
+RewriteRule ^games/([^/]+)$ /games.php?q=$1 [QSA,L]
 
 # Redirect /search?p=pubg to /search/pubg
 RewriteCond %{QUERY_STRING} ^p=(.*)$
