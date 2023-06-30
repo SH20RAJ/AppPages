@@ -9,7 +9,12 @@ include "assets/head.php";
 
 include "assets/nav.php";
 include 'assets/main_hero.php';
+
+$title = "Must Have";
+$category = "must-have";
 include 'assets/loadapps.php';
+
+
 //include 'assets/loaddbapps.php';
 include 'assets/footer.php'; 
 ?>

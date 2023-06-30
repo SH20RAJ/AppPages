@@ -1,27 +1,28 @@
- <hr hint="popular-apps">
+
+        <hr hint="popular-apps">
     <div class="page">
       <div class="wrp">
-        <h1><?php echo $title ; ?></h1>
+        <h1>Popular Apps</h1>
         <div class="content">
           <div class="app_list">
         <?php
-
-$url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1000&sort=downloads7d&origin=SITE&store_name=apps&group_name='.$category;  // Replace with the URL of your JSON file
+$url = 'https://appspages.sh20raj.com/api/aptoide.php';  // Replace with the URL of your JSON file
 // Fetch the JSON data
 $jsonData = file_get_contents($url);
 
 // Decode the JSON data
  $data = json_decode($jsonData, true);  // Set the second parameter to 'true' for associative array
-$data = $data['datalist']['list'];
+$data = $data['props']['pageProps'];
 
+$topAppsBundle = $data['topAppsBundle']['list'];
 
 // Iterate through each app and display the details
-foreach ($data as $app) {
+foreach ($topAppsBundle as $app) {
     $appName = $app['name'];
     $packageName = $app['package'];
     $appIcon = $app['icon'];
-    $developer = $app['stats']['downloads'];
-    $rating = $app['stats']['rating']['avg'];
+    $developer = $app['downloads'];
+    $rating = $app['score'];
     $uname = $app['uname'];
 
 
