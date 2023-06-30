@@ -54,7 +54,7 @@ $html = <<<HTML
     <div class="cont">
       <div class="data">
         <div class="name">
-          <a href="app?p=$uname" title="$appName">
+          <a href="../app?p=$uname" title="$appName">
             <span>$appName</span>
           </a>
         </div>
