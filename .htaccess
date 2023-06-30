@@ -1,6 +1,6 @@
-Options +FollowSymLinks
 RewriteEngine On
 
-RewriteRule ^games/(.*)/$ /games.php?q=$1 [L]
+RewriteRule app/(.*)$ app.php/?p=$1
 
+RewriteRule ^games/(.*)/$ /games.php?q=$1 [L]
 
