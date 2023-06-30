@@ -15,7 +15,7 @@
           </span>
         </button>
         <div class="hmenu">
-          <button class="btn-close hmenu_close d-block d-lg-none" type="button" onclick="document.getElementById('html').classList.add('qs');">
+          <button class="btn-close hmenu_close d-block d-lg-none" type="button" onclick="document.getElementById('html').classList.remove('qs');document.getElementById('qsearch_modal').classList.remove('open');">
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
           </button>
           <div class="head_menu">
@@ -391,7 +391,7 @@
               <use xlink:href="#i__darkmod"></use>
             </svg>
           </button>
-          <button id="qsearch_btn" class="qsearch tool-btn" aria-label="Search">
+          <button id="qsearch_btn" class="qsearch tool-btn" aria-label="Search" onclick="document.getElementById('html').classList.add('qs');document.getElementById('qsearch_modal').classList.add('open');">
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
           </button>
           <a href="cpanel/" class="lang xsmf fbold" title="Russian">
