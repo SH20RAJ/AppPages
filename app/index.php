@@ -1,6 +1,6 @@
 <?php
 
-echo $url = 'https://appspages.online/api/aptoide.php?app_id='.$_GET['p'];
+ $url = 'https://appspages.online/api/aptoide.php?app_id='.$_GET['p'];
 // Replace with the URL of your JSON file
 // Fetch the JSON data
 
@@ -24,7 +24,7 @@ if(isset($_GET['p'])){
         $appName = $row["name"];
         $appCategory = "Apps";//$row["app_category"];
         $appDesc = $row['media']["description"];
-        $appVersion = $row['file'["vername"];
+        $appVersion = $row['file']["vername"];
         $appIcon = $row["icon"];
         $appSize = bytesToMB($row["size"]);
         $packageName = $row["package"];
