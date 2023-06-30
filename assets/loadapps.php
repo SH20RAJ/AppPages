@@ -5,8 +5,16 @@
         <div class="content">
           <div class="app_list">
         <?php
+if(!$url){
+  if(isset($category)){
+  $url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1000&sort=downloads7d&origin=SITE&store_name=apps&group_name='.$category;
+} else {
+  $url = 'https://ws2-cache.aptoide.com/api/7/listApps?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=5000&sort=trending60d&origin=SITE&store_name=aptoide-web';
+}
+}
 
-$url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1000&sort=downloads7d&origin=SITE&store_name=apps&group_name='.$category;  // Replace with the URL of your JSON file
+
+// Replace with the URL of your JSON file
 // Fetch the JSON data
 $jsonData = file_get_contents($url);
 
