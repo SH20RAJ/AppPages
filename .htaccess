@@ -1,5 +1,5 @@
 RewriteEngine On
 
 RewriteRule ^search/([0-9]+)$ search.php?p=$1 [L]
-ErrorDocument 404 
+ErrorDocument 404 /site.css
 
