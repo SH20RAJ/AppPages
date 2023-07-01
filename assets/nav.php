@@ -1,4 +1,9 @@
-    <div class="header">
+<?php
+
+$extendsvg = '<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 176v160M336 256H176"/></svg>';
+
+?>
+<div class="header">
       <header>
 
         <h1 class="logo">
@@ -7,7 +12,7 @@
        </div>
           
         </h1>
-        <button class="head_menu_btn d-block d-lg-none" type="button" aria-label="Menu">
+        <button class="head_menu_btn d-block d-lg-none" type="button" aria-label="Menu" onclick="document.getElementById('html').classList.add('hm');document.querySelector('.hmenu ').classList.add('open');">
           <span class="butterbrod">
             <i></i>
             <i></i>
@@ -15,7 +20,7 @@
           </span>
         </button>
         <div class="hmenu">
-          <button class="btn-close hmenu_close d-block d-lg-none" type="button" onclick="document.getElementById('html').classList.remove('qs');document.getElementById('qsearch_modal').classList.remove('open');">
+          <button class="btn-close hmenu_close d-block d-lg-none" type="button" onclick="document.getElementById('html').classList.remove('hm');document.querySelector('.hmenu ').classList.remove('open');">
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
           </button>
           <div class="head_menu">
@@ -44,10 +49,8 @@
                   <span>Games</span>
                 </a>
                 <div class="submenu">
-                  <button class="toggle_submenu muted" type="button">
-                    <svg class="i__arrowleft">
-                      <use xlink:href="#i__arrowleft"></use>
-                    </svg>
+                  <button onclick="this.parentElement.classList.toggle('open');" class="toggle_submenu muted" type="button">
+                    <?php echo $extendsvg; ?>
                   </button>
                   <?php
 $menuItems = [
@@ -204,10 +207,8 @@ $menuItems = [
                   <span>News</span>
                 </a>
                 <div class="submenu">
-                  <button class="toggle_submenu muted" type="button">
-                    <svg class="i__arrowleft">
-                      <use xlink:href="#i__arrowleft"></use>
-                    </svg>
+                  <button onclick="this.parentElement.classList.toggle('open');" class="toggle_submenu muted" type="button">
+                    <?php echo $extendsvg; ?>
                   </button>
                   <ul>
                     <li class="d-lg-none">
@@ -249,10 +250,8 @@ $menuItems = [
                   <span>Articles</span>
                 </a>
                 <div class="submenu">
-                  <button class="toggle_submenu muted" type="button">
-                    <svg class="i__arrowleft">
-                      <use xlink:href="#i__arrowleft"></use>
-                    </svg>
+                  <button onclick="this.parentElement.classList.toggle('open');" class="toggle_submenu muted" type="button">
+                    <?php echo $extendsvg; ?>
                   </button>
                   <ul>
                     <li class="d-lg-none">
@@ -310,7 +309,7 @@ $menuItems = [
             <div class="head_menu_s_foot d-lg-none">
               <a href="Join" class="lang xsmf fbold" title="Dashboard">
                 <span class="minbtn">
-                  <i class="flag" style="background-image: url('../templates/an1/images/ru.png');"></i> Login </span>
+                  <i class="flag" style="background-image: url('https://i.imgur.com/cAqfNCI.png');"></i> Login </span>
               </a>
               <div class="social" title="Read Us">
                 <a class="soc_tg" href="https://t.me/cxdiin" rel="noopener nofollow" target="_blank">
@@ -333,10 +332,9 @@ $menuItems = [
           </div>
         </div>
         <div class="tools">
-          <button id="darkmod_btn" class="darkmod_btn tool-btn" aria-label="Dark Theme">
-            <svg width="24" height="24">
-              <use xlink:href="#i__darkmod"></use>
-            </svg>
+          <button id="darkmod_btn" class="darkmod_btn tool-btn" aria-label="Dark Theme" onclick="document.getElementById('html').classList.toggle('darkmod');">
+            
+<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><circle fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" cx="256" cy="256" r="208"/><path d="M256 176v160a80 80 0 010-160zM256 48v128a80 80 0 010 160v128c114.88 0 208-93.12 208-208S370.88 48 256 48z"/></svg>
           </button>
           <button id="qsearch_btn" class="qsearch tool-btn" aria-label="Search" onclick="document.getElementById('html').classList.add('qs');document.getElementById('qsearch_modal').classList.add('open');">
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>

@@ -30,8 +30,8 @@
     <link rel="mask-icon" href="https://an1.com/templates/an1/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="preload" href="https://an1.com/templates/an1/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin="" />
     <link rel="preload" href="https://an1.com/templates/an1/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin="" />-->
-    <link rel="preload" href="https://an1.com/templates/an1/css/styles.css?v=6.0" as="style" />
-    <link href="https://an1.com/templates/an1/css/styles.css?v=6.0" type="text/css" rel="stylesheet" />
+    <link rel="preload" href="https://appspages.online/site.css" as="style" />
+    <link href="site.css" type="text/css" rel="stylesheet" />
     <script async="" src="https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"></script>
 
   </head>
