@@ -1,7 +1,7 @@
 <head>
     <meta name="google-site-verification" content="dnuxRFPlXTc47CbbYyiaq8eTi_hQZ5StdvZMw6fLm9A" />
     <meta charset="utf-8" />
-    <title>AppsPages : Make Your App's Page Online</title>
+    <title><?php if(isset($appName)){echo $appName." - " ;} ?>AppsPages : Make Your App's Page Online</title>
     <meta name="description" content="Free Games and Programs, you can download for free, a lot popular games with MOD for Android." />
     <meta name="keywords" content="AppsPages, app downloading, website, APKPure, download, Android, iOS, applications, software, games, utilities, free apps, premium apps, app repository, mobile apps, app store, app market, APK files, app reviews, app ratings, app updates, app categories, app recommendations,Apps, Pages, App Store, Download, APK, Android, iOS, Windows, Mac, Games, Utilities, Tools, Productivity, Entertainment, Communication, Social Networking, Media, Music, Video, Photos, Education, Health, Fitness, Lifestyle, News, Weather, Sports, Shopping, Finance, Travel, Navigation, Food, Drink, Books, Reference, Art, Design, Photography, Personalization, Business, Professional, Development, Parenting, Kids, Family, Dating, Relationships, Gaming, Adventure, Strategy, Puzzle, Simulation, Arcade, Casual, Racing, Sports, Multiplayer, Free, Paid, Popular, Trending, Latest, Top-rated, Reviews" />
     <link rel="search" type="application/opensearchdescription+xml" href="https://appspages.online/sitemaps/opensearch.php" title="News, free games and program for Android" />
@@ -24,6 +24,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="https://appspages.online/logo.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="https://appspages.online/logo.png" />
+    <?php if (isset($appIcon)) {
+      echo '<link rel="icon" href="'.$appIcon.'"/>';
+    }
+    ?>
     <meta name="theme-color" content="#ffffff" />
     <!--<meta name="msapplication-config" content="https://an1.com/templates/an1/images/favicon/browserconfig.xml" />
     <link rel="manifest" href="https://an1.com/templates/an1/images/favicon/manifest.json" />

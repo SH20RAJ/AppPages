@@ -47,14 +47,7 @@ if(isset($_GET['p'])){
 
 <!DOCTYPE html>
 <html lang="en" id="html" class="ap-open hfix tb_on" prefix="og: https://ogp.me/ns#">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title><?php echo $appName ;?> - Download - AppsPages</title>
-      <link rel="stylesheet" href="../../site.css">
-     <link rel="icon" href="<?php echo $appIcon;?>"/>
-   </head>
+   <?php include 'assets/head.php' ; ?>
    <body>
      <?php include "assets/nav.php";include "assets/search.php" ?>
       <div class="page" style="height: auto !important;">
