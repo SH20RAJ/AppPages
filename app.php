@@ -31,6 +31,7 @@ if(isset($_GET['p'])){
         $packageName = $row["package"];
         $screenshots = $row['media']["screenshots"];
         $appUrl = $row["file"]['path'];
+        $appLinkAlt = $row["file"]['pathAlt'];
         $appplat = "Android";//$row["supported_platforms"];
         $time = $row["updated"];
         $downloads = $row['stats']["downloads"];
@@ -240,14 +241,14 @@ foreach ($urlArray as $url) {
                            </div>
                            <i class="size"><?php echo $appSize; ?>Mb</i> 
                         </a>
-                        <a class="download_line brand" rel="sponsored nofollow" href="#" style="display:none;">
+                        <a class="download_line brand" rel="sponsored nofollow" href="<?php echo $appLinkAlt ;?>" style="display:none;">
                            <div>
                               <i>
                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
                                     <path fill="currentColor" d="M12,28V22h4a6,6,0,1,0-6-6v4H4V16A12,12,0,1,1,16,28ZM2.67,28,4,26.62V22h6v6Zm12.7-11.33H12l5.05-5.33-1.36,4h3.5l-5.11,5.6Z"></path>
                                  </svg>
                               </i>
-                              Play in <?php echo $appName ;?> on PC
+                              Download <?php echo $appName ;?>
                            </div>
                            <i class="size">Play now</i> 
                         </a>
