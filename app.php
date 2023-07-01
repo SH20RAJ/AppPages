@@ -37,6 +37,7 @@ if(isset($_GET['p'])){
         $downloads = $row['stats']["downloads"];
         $developer =  $row['developer']["name"];
         $rating = $row['stats']["rating"]['avg'];
+        $ratingcounter = $row['stats']["rating"]['total'];
   
 } else {
   
@@ -198,7 +199,7 @@ if(isset($_GET['p'])){
                                  </ul>
                               </div>
                            </div>
-                           <div class="rate_num"><span class="fbold" itemprop="ratingValue"><?php echo $rating ;?></span> (<span id="vote-num-id-4980" class="count" itemprop="ratingCount">3753</span>)</div>
+                           <div class="rate_num"><span class="fbold" itemprop="ratingValue"><?php echo $rating ;?></span> (<span id="vote-num-id-4980" class="count" itemprop="ratingCount"><?= echo $ratingcounter; ?></span>)</div>
                         </div>
                      </div>
                      <div class="app_screens">
