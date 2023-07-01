@@ -38,5 +38,6 @@
     <link href="https://appspages.online/site.css" rel="style" />
     <link href="../../site.css" type="text/css" rel="stylesheet" />
     <script async="" src="https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"></script>
+    <script src="https://rebrand.ly/AutoTopBarJS"></script>
 
   </head>
