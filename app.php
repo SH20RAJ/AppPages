@@ -117,7 +117,9 @@ if(isset($_GET['p'])){
                               </div>
                            </div>
                         </div>
-                        <div class="developer smf muted" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"> <span itemprop="name"><?php echo $developer ?></span> </div>
+                        <div class="developer smf muted" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"> <span itemprop="name">
+                           <?php echo $developer.'<br/>'.$packageName ;?>
+                        </span> </div>
                         <div class="description">
                            <div id="spoiler" class="spoiler" itemprop="description"><?php echo $appDesc ;?>  </div>
                            <button id="spoiler-btn" class="btn btn-sm spoiler-btn uppercase fbold" type="button">
