@@ -34,7 +34,7 @@ if(isset($_GET['p'])){
         $appplat = "Android";//$row["supported_platforms"];
         $time = $row["updated"];
         $downloads = $row['stats']["downloads"];
-        $developer = $packageName;
+        $developer =  $row['developer']["name"];
         $rating = '4.9';
   
 } else {
