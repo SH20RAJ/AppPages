@@ -36,7 +36,7 @@ if(isset($_GET['p'])){
         $time = $row["updated"];
         $downloads = $row['stats']["downloads"];
         $developer =  $row['developer']["name"];
-        $rating = '4.9';
+        $rating = $row['stats']["rating"]['avg'];
   
 } else {
   
