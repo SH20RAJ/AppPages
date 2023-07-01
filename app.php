@@ -35,6 +35,7 @@ if(isset($_GET['p'])){
         $time = $row["updated"];
         $downloads = $row['stats']["downloads"];
         $developer = $packageName;
+        $rating = '4.9';
   
 } else {
   
@@ -185,7 +186,7 @@ if(isset($_GET['p'])){
                            <div id="ratig-layer-4980">
                               <div class="rating">
                                  <ul class="unit-rating">
-                                    <li class="current-rating" style="width:68%;">3.4</li>
+                                    <li class="current-rating" style="width:68%;"><?php echo $rating ;?></li>
                                     <li><a title="Useless" class="r1-unit" onclick="doRate('1', '4980'); return false;">1</a></li>
                                     <li><a title="Poor" class="r2-unit" onclick="doRate('2', '4980'); return false;">2</a></li>
                                     <li><a title="Fair" class="r3-unit" onclick="doRate('3', '4980'); return false;">3</a></li>
@@ -194,7 +195,7 @@ if(isset($_GET['p'])){
                                  </ul>
                               </div>
                            </div>
-                           <div class="rate_num"><span class="fbold" itemprop="ratingValue">3.4</span> (<span id="vote-num-id-4980" class="count" itemprop="ratingCount">3753</span>)</div>
+                           <div class="rate_num"><span class="fbold" itemprop="ratingValue"><?php echo $rating ;?></span> (<span id="vote-num-id-4980" class="count" itemprop="ratingCount">3753</span>)</div>
                         </div>
                      </div>
                      <div class="app_screens">
