@@ -5,6 +5,12 @@
         <div class="content">
           <div class="app_list">
         <?php
+function bytesToMB($bytes) {
+    $mb = $bytes / (1024 * 1024); // Convert bytes to megabytes
+    $rounded = round($mb, 1); // Round off to 1 decimal place
+    return $rounded;
+}
+
 if(isset($search)){
   $url = "https://web-api-cache.aptoide.com/search?query=".$search."&country=IN&mature=false";
 }
@@ -12,7 +18,9 @@ if(isset($search)){
 if(isset($cate)){
   $url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1111&sort=sort:web:downloads&origin=SITE&group_name='.$cate.'&store_name=aptoide-web';
 }
-
+if(isset($newurl)){
+  $url = $newurl;
+}
 if(!$url){
   if(isset($category)){
   $url = 'https://ws2-cache.aptoide.com/api/7/apps/get?cdn=web&q=bXlDUFU9YXJtNjQtdjhhLGFybWVhYmktdjdhLGFybWVhYmkmbGVhbmJhY2s9MA&aab=1&mature=false&language=en_GB&country=IN&not_apk_tags=&offset=0&limit=1000&sort=downloads7d&origin=SITE&store_name=apps&group_name='.$category;
@@ -40,18 +48,13 @@ foreach ($data as $app) {
     $appName = $app['name'];
     $packageName = $app['package'];
     $appIcon = $app['icon'];
-    $developer = $app['stats']['downloads'];
+    $developer = bytesToMB($app['size']).'mb';
     $rating = $app['stats']['rating']['avg'];
     $uname = $app['uname'];
 
 
  // Use heredoc syntax to define the HTML code
 $html = <<<HTML
-  <style>
-  .item_app.mod .meta::before {
-    content: "Download";
-}
-  </style>
 <div class="item">
   <div class="item_app mod">
     <div class="img">

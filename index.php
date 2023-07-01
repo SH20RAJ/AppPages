@@ -1,5 +1,5 @@
 <?php
-include "conn.php";
+//include "conn.php";
 
 function loadapps($title,$category,$url){
 include 'assets/loadapps.php';
@@ -16,7 +16,7 @@ include "assets/search.php";
 
 include 'assets/main_hero.php';
 
-loadapps("Must Have",'must-have',0);
+loadapps("Arcade",'arcade',0);
 loadapps("Apps",0,0);
 
 

@@ -4,7 +4,7 @@
 // Replace with the URL of your JSON file
 // Fetch the JSON data
 
-function bytesToMB($bytes) {
+function bytesToMB2($bytes) {
     $mb = $bytes / (1024 * 1024); // Convert bytes to megabytes
     $rounded = round($mb, 1); // Round off to 1 decimal place
     return $rounded;
@@ -22,17 +22,19 @@ $row = $data['props']['app'];
 
 if(isset($_GET['p'])){
         $appName = $row["name"];
+        $app_id = $row["id"];
         $appCategory = "Apps";//$row["app_category"];
         $appDesc = $row['media']["description"];
         $appVersion = $row['file']["vername"];
         $appIcon = $row["icon"];
-        $appSize = bytesToMB($row["size"]);
+        $appSize = bytesToMB2($row["size"]);
         $packageName = $row["package"];
         $screenshots = $row['media']["screenshots"];
         $appUrl = $row["file"]['path'];
         $appplat = "Android";//$row["supported_platforms"];
         $time = $row["updated"];
         $downloads = $row['stats']["downloads"];
+        $developer = $packageName;
   
 } else {
   
@@ -191,11 +193,11 @@ if(isset($_GET['p'])){
                               <div class="rating">
                                  <ul class="unit-rating">
                                     <li class="current-rating" style="width:68%;">3.4</li>
-                                    <li><a href="#" title="Useless" class="r1-unit" onclick="doRate('1', '4980'); return false;">1</a></li>
-                                    <li><a href="#" title="Poor" class="r2-unit" onclick="doRate('2', '4980'); return false;">2</a></li>
-                                    <li><a href="#" title="Fair" class="r3-unit" onclick="doRate('3', '4980'); return false;">3</a></li>
-                                    <li><a href="#" title="Good" class="r4-unit" onclick="doRate('4', '4980'); return false;">4</a></li>
-                                    <li><a href="#" title="Excellent" class="r5-unit" onclick="doRate('5', '4980'); return false;">5</a></li>
+                                    <li><a title="Useless" class="r1-unit" onclick="doRate('1', '4980'); return false;">1</a></li>
+                                    <li><a title="Poor" class="r2-unit" onclick="doRate('2', '4980'); return false;">2</a></li>
+                                    <li><a title="Fair" class="r3-unit" onclick="doRate('3', '4980'); return false;">3</a></li>
+                                    <li><a title="Good" class="r4-unit" onclick="doRate('4', '4980'); return false;">4</a></li>
+                                    <li><a title="Excellent" class="r5-unit" onclick="doRate('5', '4980'); return false;">5</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -295,6 +297,13 @@ foreach ($urlArray as $url) {
             </div>
          </div>
       </div>
+<?php
+$title = 'Releted Apps';
+//$group = 'strategy';
+$newurl = 'https://ws75.aptoide.com/api/7/apps/getRecommended?limit=21&app_id='.$app_id;
+include 'assets/loadapps.php';
+include('assets/footer.php');
+?>
       <script src="index.js"></script>
    </body>
 </html>
