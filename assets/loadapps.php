@@ -4,11 +4,14 @@
         <h1><?php echo $title ; ?></h1>
         <div class="content">
           <div class="app_list">
-        <?php
+        <?php 
+if (!function_exists('bytesToMB')) {
+  
 function bytesToMB($bytes) {
     $mb = $bytes / (1024 * 1024); // Convert bytes to megabytes
     $rounded = round($mb, 1); // Round off to 1 decimal place
     return $rounded;
+}
 }
 
 if(isset($search)){
