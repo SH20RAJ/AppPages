@@ -1,4 +1,13 @@
 <head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTC9491YXG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-WTC9491YXG');
+    </script>
     <meta name="google-site-verification" content="dnuxRFPlXTc47CbbYyiaq8eTi_hQZ5StdvZMw6fLm9A" />
     <meta charset="utf-8" />
     <title><?php if(isset($appName)){echo $appName." - " ;} ?>AppsPages : Make Your App's Page Online</title>
