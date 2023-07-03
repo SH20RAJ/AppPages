@@ -45,3 +45,30 @@ $stmt->close();
 $conn->close();
 
 ?>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0000FF;
+    }
+</style>
