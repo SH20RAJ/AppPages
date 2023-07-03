@@ -195,22 +195,15 @@ if ($result->num_rows > 0) {
                         <div class="section-title fbold">Screenshots</div>
                         <div class="app_screens_in">
                            <div class="app_screens_list">
- <?php
-$urlArray = array();
+                           <?php
+                        foreach ($screenshots as $url) {
+                           echo '<a href="'.$url.'" target="_blank">
+                                                         <meta itemprop="screenshot" content="'.$url.'">
+                                                         <img src="'.$url.'" width="169" height="300" alt="'.$appName .'" loading="lazy">
+                                                      </a>';
+                        }
 
-foreach ($screenshots as $item) {
-    $urlArray[] = $item['url'];
-}
-
-foreach ($urlArray as $url) {
-    echo '<a href="'.$url.'" target="_blank">
-                                 <meta itemprop="screenshot" content="'.$url.'">
-                                 <img src="'.$url.'" width="169" height="300" alt="'.$appName .'" loading="lazy">
-                              </a>';
-}
-
-?>
-                              
+?>                  
 
                            </div>
                         </div>
