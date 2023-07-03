@@ -26,6 +26,8 @@ if ($result->num_rows > 0) {
         $downloads = $row["downloads"];
         $views = $row["views"];
         $verified = $row["verified"];
+        $rating = '5';
+        $ratingcounter = '1000000';
     }
 } else {
     echo "No apps found in the database.";
