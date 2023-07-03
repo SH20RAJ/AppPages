@@ -1,13 +1,41 @@
 <?php
 
-// Check if the app_name parameter is provided in the URL
-if (isset($_REQUEST['app_id'])) {
-    $appName = $_REQUEST['app_id'];
+// Initialize variables for storing form data
+$appName = $appDescription = $screenshots = $appURL = $appCategory = $supportedPlatforms = '';
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the form data
+    $appName = $_POST["app_name"];
+    $appDescription = $_POST["app_description"];
+    $screenshots = $_POST["screenshots"];
+    $appURL = $_POST["app_url"];
+    $appCategory = $_POST["app_category"];
+    $supportedPlatforms = $_POST["supported_platforms"];
+
+    // Prepare and execute the update query
+    $sql = "UPDATE apps SET app_description=?, screenshots=?, app_url=?, app_category=?, supported_platforms=? WHERE app_id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssssi", $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $_GET["app_id"]);
+
+    if ($stmt->execute()) {
+        echo "App details updated successfully.";
+    } else {
+        echo "Error updating app details: " . $stmt->error;
+    }
+
+    // Close the prepared statement
+    $stmt->close();
+}
+
+// Check if the app_id parameter is provided in the URL
+if (isset($_GET['app_id'])) {
+    $appId = $_GET['app_id'];
 
     // Retrieve the details of the app from the database
-    $sql = "SELECT * FROM apps WHERE app_id = ?";
+    $sql = "SELECT app_name, app_description, screenshots, app_url, app_category, supported_platforms FROM apps WHERE app_id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $appName);
+    $stmt->bind_param("i", $appId);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -17,69 +45,32 @@ if (isset($_REQUEST['app_id'])) {
 
         // Access the app information
         $appName = $row["app_name"];
-        $appCategory = $row["app_category"];
         $appDescription = $row["app_description"];
-        $appVersion = $row["app_version"];
-        $supportedPlatforms = $row["supported_platforms"];
-        $appIcon = $row["app_icon"];
-        $appSize = $row["app_size"];
-        $packageName = $row["package_name"];
-        $uploaderId = $row["uploader_id"];
         $screenshots = $row["screenshots"];
-        $uploadTime = $row["upload_time"];
-        $hosting = $row["hosting"];
         $appURL = $row["app_url"];
-        $verified = $row["verified"];
-        $downloads = $row["downloads"];
-        $views = $row["views"];
+        $appCategory = $row["app_category"];
+        $supportedPlatforms = $row["supported_platforms"];
 
         // Display a form to edit the app details
         echo '
-        <form method="post" action="update.php">
+        <form method="post" action="">
             <label>App Name:</label>
             <input type="text" name="app_name" value="' . $appName . '" readonly><br><br>
-            
-            <label>App Category:</label>
-            <input type="text" name="app_category" value="' . $appCategory . '"><br><br>
             
             <label>App Description:</label>
             <textarea name="app_description">' . $appDescription . '</textarea><br><br>
             
-            <label>App Version:</label>
-            <input type="text" name="app_version" value="' . $appVersion . '"><br><br>
-            
-            <label>Supported Platforms:</label>
-            <input type="text" name="supported_platforms" value="' . $supportedPlatforms . '"><br><br>
-            
-            <label>App Icon:</label>
-            <input type="text" name="app_icon" value="' . $appIcon . '"><br><br>
-            
-            <label>App Size:</label>
-            <input type="text" name="app_size" value="' . $appSize . '"><br><br>
-            
-            <label>Package Name:</label>
-            <input type="text" name="package_name" value="' . $packageName . '"><br><br>
-            
-            <label>Uploader ID:</label>
-            <input type="text" name="uploader_id" value="' . $uploaderId . '" readonly><br><br>
-            
             <label>Screenshots:</label>
             <input type="text" name="screenshots" value="' . $screenshots . '"><br><br>
-            
-            <label>Hosting:</label>
-            <input type="text" name="hosting" value="' . $hosting . '"><br><br>
             
             <label>App URL:</label>
             <input type="text" name="app_url" value="' . $appURL . '"><br><br>
             
-            <label>Verified:</label>
-            <input type="checkbox" name="verified" ' . ($verified ? 'checked' : '') . '><br><br>
+            <label>App Category:</label>
+            <input type="text" name="app_category" value="' . $appCategory . '"><br><br>
             
-            <label>Downloads:</label>
-            <input type="number" name="downloads" value="' . $downloads . '"><br><br>
-            
-            <label>Views:</label>
-            <input type="number" name="views" value="' . $views . '"><br><br>
+            <label>Supported Platforms:</label>
+            <input type="text" name="supported_platforms" value="' . $supportedPlatforms . '"><br><br>
             
             <input type="submit" value="Update">
         </form>
@@ -96,6 +87,7 @@ if (isset($_REQUEST['app_id'])) {
 
 // Close the database connection
 $conn->close();
+
 
 ?>
 <style>
