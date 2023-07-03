@@ -2,8 +2,8 @@ RewriteEngine On
 
 RewriteRule app/(.*)$ app.php/?p=$1
 
-RewriteRule view/(.*)$ view.php/?p=$1
+RewriteRule view/(.*)/(.*)$ view.php/?p=$1&id=$2
 
-RewriteRule ^games/(.*)/$ /games.php?q=$1 [L]
+RewriteRule ^games/(.*)$ /games.php?q=$1 [L]
 
 ErrorDocument 404 /index.php
