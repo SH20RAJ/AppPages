@@ -1,7 +1,7 @@
 <?php
 
 // Prepare and execute the query
-$uploaderId = 4;
+$uploaderId = $_SESSION['uploader_id'];
 $sql = "SELECT app_id, app_name, app_icon, upload_time FROM apps WHERE uploader_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $uploaderId);
