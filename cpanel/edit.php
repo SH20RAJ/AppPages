@@ -1,11 +1,12 @@
 <?php
 
 // Initialize variables for storing form data
-$appName = $appDescription = $screenshots = $appURL = $appCategory = $supportedPlatforms = '';
+$appId = $appName = $appDescription = $screenshots = $appURL = $appCategory = $supportedPlatforms = '';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the form data
+    $appId = $_POST["app_id"];
     $appName = $_POST["app_name"];
     $appDescription = $_POST["app_description"];
     $screenshots = $_POST["screenshots"];
@@ -16,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and execute the update query
     $sql = "UPDATE apps SET app_name=?, app_description=?, screenshots=?, app_url=?, app_category=?, supported_platforms=? WHERE app_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssi",$appName , $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $_GET["app_id"]);
+    $stmt->bind_param("ssssssi", $appName, $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $appId);
 
     if ($stmt->execute()) {
-        echo " <div class="msg"> App details updated successfully.</div>";
+        echo "App details updated successfully.";
     } else {
         echo "Error updating app details: " . $stmt->error;
     }
@@ -54,8 +55,11 @@ if (isset($_GET['app_id'])) {
         // Display a form to edit the app details
         echo '
         <form method="post" action="">
+            <label>App ID:</label>
+            <input type="text" name="app_id" value="' . $appId . '" readonly><br><br>
+            
             <label>App Name:</label>
-            <input type="text" name="app_name" value="' . $appName . '" ><br><br>
+            <input type="text" name="app_name" value="' . $appName . '"><br><br>
             
             <label>App Description:</label>
             <textarea name="app_description">' . $appDescription . '</textarea><br><br>
@@ -88,8 +92,8 @@ if (isset($_GET['app_id'])) {
 // Close the database connection
 $conn->close();
 
-
 ?>
+
 <style>
     body {
         font-family: Arial, sans-serif;
