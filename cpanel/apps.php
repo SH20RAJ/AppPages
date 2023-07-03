@@ -50,7 +50,7 @@ if (isset($_GET['app_id'])) {
         $appIcon = $row["app_icon"];
         $appSize = $row["app_size"];
         $appVersion = $row["app_version"];
-
+ 
         // Display a form to edit the app details
         echo '
         <form method="post" action="">
