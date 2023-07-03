@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
         echo '<td><img src="' . $appIcon . '" alt="App Icon" width="50" height="50"></td>';
         echo '<td>' . $appName . '</td>';
         echo '<td>' . $uploadDate . '</td>';
-        echo '<td><a href="?p=edit&id=' . $appid . '">Edit</a></td>';
+        echo '<td><a href="?p=edit&app_id=' . $appid . '">Edit</a></td>';
         echo '</tr>';
     }
 
