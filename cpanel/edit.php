@@ -1,7 +1,8 @@
 <?php
 
+
 // Initialize variables for storing form data
-$appId = $appName = $appDescription = $screenshots = $appURL = $appCategory = $supportedPlatforms = '';
+$appId = $appName = $appDescription = $screenshots = $appURL = $appCategory = $supportedPlatforms = $appIcon = $appSize = $appVersion = '';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,10 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $appURL = $_POST["app_url"];
     $appCategory = $_POST["app_category"];
     $supportedPlatforms = $_POST["supported_platforms"];
+    $appIcon = $_POST["app_icon"];
+    $appSize = $_POST["app_size"];
+    $appVersion = $_POST["app_version"];
     $uploaderId = $_SESSION['uploader_id'];
 
     // Update the app details in the database
-    $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
+    $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms', app_icon='$appIcon', app_size='$appSize', app_version='$appVersion' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
     
     if ($conn->query($sql) === TRUE) {
         echo "App details updated successfully.";
@@ -31,7 +35,7 @@ if (isset($_GET['app_id'])) {
     $uploaderId = $_SESSION['uploader_id'];
 
     // Retrieve the details of the app from the database
-    $sql = "SELECT app_name, app_description, screenshots, app_url, app_category, supported_platforms FROM apps WHERE app_id='$appId' AND uploader_id='$uploaderId'";
+    $sql = "SELECT app_name, app_description, screenshots, app_url, app_category, supported_platforms, app_icon, app_size, app_version FROM apps WHERE app_id='$appId' AND uploader_id='$uploaderId'";
     $result = $conn->query($sql);
 
     // Check if the app exists
@@ -45,6 +49,9 @@ if (isset($_GET['app_id'])) {
         $appURL = $row["app_url"];
         $appCategory = $row["app_category"];
         $supportedPlatforms = $row["supported_platforms"];
+        $appIcon = $row["app_icon"];
+        $appSize = $row["app_size"];
+        $appVersion = $row["app_version"];
 
         // Display a form to edit the app details
         echo '
@@ -59,7 +66,7 @@ if (isset($_GET['app_id'])) {
             <textarea name="app_description">' . $appDescription . '</textarea><br><br>
             
             <label>Screenshots:</label>
-            <input type="text" name="screenshots" value="' . $screenshots . '"><br><br>
+            <textarea name="screenshots">' . $screenshots . '</textarea><br><br>
             
             <label>App URL:</label>
             <input type="text" name="app_url" value="' . $appURL . '"><br><br>
@@ -70,9 +77,25 @@ if (isset($_GET['app_id'])) {
             <label>Supported Platforms:</label>
             <input type="text" name="supported_platforms" value="' . $supportedPlatforms . '"><br><br>
             
+            <label>App Icon:</label>
+            <input type="text" name="app_icon" value="' . $appIcon . '"><br><br>
+            
+            <label>App Size:</label>
+            <input type="text" name="app_size" value="' . $appSize . '"><br><br>
+            
+            <label>App Version:</label>
+            <input type="text" name="app_version" value="' . $appVersion . '"><br><br>
+            
             <input type="submit" value="Update">
         </form>
         ';
+        
+        // Delete App button
+        echo '<br>
+        <form method="post" action="delete.php">
+            <input type="hidden" name="app_id" value="' . $appId . '">
+            <input type="submit" value="Delete App">
+        </form>';
     } else {
         echo "App not found.";
     }
@@ -82,6 +105,7 @@ if (isset($_GET['app_id'])) {
 $conn->close();
 
 ?>
+
 
 
 <style>
