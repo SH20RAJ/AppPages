@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Check if the app_id parameter is provided in the URL
 if (isset($_GET['app_id'])) {
     $appId = $_GET['app_id'];
-    $uploaderId = $_SESSION['user_id'];
+    $uploaderId = $_SESSION['uploader_id'];
 
     // Retrieve the details of the app from the database
     $sql = "SELECT app_name, app_description, screenshots, app_url, app_category, supported_platforms FROM apps WHERE app_id='$appId' AND uploader_id='$uploaderId'";
