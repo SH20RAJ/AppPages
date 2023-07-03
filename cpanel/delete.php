@@ -1,5 +1,5 @@
 <?php
-
+include '../conn.php';
 // Check if the app_id is provided in the POST request
 if (isset($_POST['app_id'])) {
     $appId = $_POST['app_id'];
@@ -10,6 +10,7 @@ if (isset($_POST['app_id'])) {
 
     if ($conn->query($sql) === TRUE) {
         echo "App deleted successfully.";
+        header('Location : ../cpanel/?p=apps');
     } else {
         echo "Error deleting app: " . $conn->error;
     }
