@@ -14,12 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $supportedPlatforms = $_POST["supported_platforms"];
 
     // Prepare and execute the update query
-    $sql = "UPDATE apps SET app_description=?, screenshots=?, app_url=?, app_category=?, supported_platforms=? WHERE app_id=?";
+    $sql = "UPDATE apps SET app_name=?, app_description=?, screenshots=?, app_url=?, app_category=?, supported_platforms=? WHERE app_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssi", $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $_GET["app_id"]);
+    $stmt->bind_param("sssssi",$appName , $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $_GET["app_id"]);
 
     if ($stmt->execute()) {
-        echo "App details updated successfully.";
+        echo " <div class="msg"> App details updated successfully.</div>";
     } else {
         echo "Error updating app details: " . $stmt->error;
     }
@@ -94,6 +94,12 @@ $conn->close();
     body {
         font-family: Arial, sans-serif;
         background-color: #f1f1f1;
+    }
+    .msh {
+        background: green;
+        padding : 10px;
+        text-align:center;
+        color:skyblue;
     }
 
     form {
