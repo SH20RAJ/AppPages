@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $appURL = $_POST["app_url"];
     $appCategory = $_POST["app_category"];
     $supportedPlatforms = $_POST["supported_platforms"];
-    $uploaderId = $_SESSION['user_id'];
+    $uploaderId = $_SESSION['uploader_id'];
 
     // Update the app details in the database
     $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
