@@ -2,7 +2,7 @@
 
 // Prepare and execute the query
 $uploaderId = 2;
-$sql = "SELECT * FROM apps WHERE uploader_id = ?";
+$sql = "SELECT app_name, app_icon, upload_time FROM apps WHERE uploader_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $uploaderId);
 $stmt->execute();
@@ -10,33 +10,32 @@ $result = $stmt->get_result();
 
 // Check if any rows are returned
 if ($result->num_rows > 0) {
-    // Output data of each row
+    // Output data in a table with CSS styling
+    echo '<table>';
+    echo '<tr>';
+    echo '<th>App Name</th>';
+    echo '<th>App Icon</th>';
+    echo '<th>Upload Date</th>';
+    echo '<th>Edit</th>';
+    echo '</tr>';
+
+    // Loop through each row
     while ($row = $result->fetch_assoc()) {
         // Access the app information
         $appName = $row["app_name"];
-        $appCategory = $row["app_category"];
-        $appDescription = $row["app_description"];
-        $appVersion = $row["app_version"];
-        $supportedPlatforms = $row["supported_platforms"];
         $appIcon = $row["app_icon"];
-        $appSize = $row["app_size"];
-        $packageName = $row["package_name"];
-        $uploaderId = $row["uploader_id"];
-        $screenshots = $row["screenshots"];
-        $uploadTime = $row["upload_time"];
-        $hosting = $row["hosting"];
-        $appURL = $row["app_url"];
-        $verified = $row["verified"];
-        $downloads = $row["downloads"];
-        $views = $row["views"];
+        $uploadDate = $row["upload_time"];
 
-        // Do something with the app information
-        echo "App Name: " . $appName . "<br>";
-        echo "App Category: " . $appCategory . "<br>";
-        // Continue with other app details...
-
-        echo "<br>";
+        // Display the app details in the table
+        echo '<tr>';
+        echo '<td>' . $appName . '</td>';
+        echo '<td><img src="' . $appIcon . '" alt="App Icon" width="50" height="50"></td>';
+        echo '<td>' . $uploadDate . '</td>';
+        echo '<td><a href="edit_app.php?app_name=' . urlencode($appName) . '">Edit</a></td>';
+        echo '</tr>';
     }
+
+    echo '</table>';
 } else {
     echo "No apps found.";
 }
@@ -44,4 +43,5 @@ if ($result->num_rows > 0) {
 // Close the prepared statement and database connection
 $stmt->close();
 $conn->close();
+
 ?>
