@@ -94,7 +94,7 @@ if (isset($_GET['app_id'])) {
         echo '<br>
         <form method="post" action="delete.php">
             <input type="hidden" name="app_id" value="' . $appId . '">
-            <input type="submit" value="Delete App">
+            <input onclick="alert('This is Unrecoverable')" type="submit" value="Delete App">
         </form>';
     } else {
         echo "App not found.";
