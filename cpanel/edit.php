@@ -55,7 +55,7 @@ if (isset($_GET['app_id'])) {
         echo '
         <form method="post" action="">
             <label>App Name:</label>
-            <input type="text" name="app_name" value="' . $appName . '" readonly><br><br>
+            <input type="text" name="app_name" value="' . $appName . '" ><br><br>
             
             <label>App Description:</label>
             <textarea name="app_description">' . $appDescription . '</textarea><br><br>
