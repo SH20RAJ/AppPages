@@ -33,6 +33,7 @@ if(isset($_GET['p'])){
       </div>
     </section>
 
+    
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");
