@@ -118,9 +118,7 @@ $conn->close();
     }
 
     input[type="text"],
-    textarea,
-    input[type="number"],
-    input[type="checkbox"] {
+    textarea {
         width: 100%;
         padding: 10px;
         margin-bottom: 15px;
@@ -132,12 +130,6 @@ $conn->close();
 
     textarea {
         height: 100px;
-    }
-
-    input[type="checkbox"] {
-        display: inline;
-        width: auto;
-        margin-bottom: 5px;
     }
 
     input[type="submit"] {
@@ -154,3 +146,4 @@ $conn->close();
         background-color: #45a049;
     }
 </style>
+
