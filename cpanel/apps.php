@@ -2,7 +2,7 @@
 
 // Prepare and execute the query
 $uploaderId = 2;
-$sql = "SELECT app_name, app_icon, upload_time FROM apps WHERE uploader_id = ?";
+$sql = "SELECT app_id, app_name, app_icon, upload_time FROM apps WHERE uploader_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $uploaderId);
 $stmt->execute();
@@ -22,16 +22,17 @@ if ($result->num_rows > 0) {
     // Loop through each row
     while ($row = $result->fetch_assoc()) {
         // Access the app information
+        $appid = $row["app_id"];
         $appName = $row["app_name"];
         $appIcon = $row["app_icon"];
         $uploadDate = $row["upload_time"];
 
         // Display the app details in the table
         echo '<tr>';
-        echo '<td>' . $appName . '</td>';
         echo '<td><img src="' . $appIcon . '" alt="App Icon" width="50" height="50"></td>';
+        echo '<td>' . $appName . '</td>';
         echo '<td>' . $uploadDate . '</td>';
-        echo '<td><a href="edit_app.php?app_name=' . urlencode($appName) . '">Edit</a></td>';
+        echo '<td><a href="?p=edit&id=' . $appid . '">Edit</a></td>';
         echo '</tr>';
     }
 
@@ -49,6 +50,7 @@ $conn->close();
     table {
         width: 100%;
         border-collapse: collapse;
+        margin: 20px;
     }
 
     th, td {
