@@ -17,6 +17,8 @@ if ($result->num_rows > 0) {
     echo '<th>App Icon</th>';
     echo '<th>Upload Date</th>';
     echo '<th>Edit</th>';
+    echo '<th>Views</th>';
+    echo '<th>Downloads</th>';
     echo '</tr>';
 
     // Loop through each row
@@ -26,6 +28,9 @@ if ($result->num_rows > 0) {
         $appName = $row["app_name"];
         $appIcon = $row["app_icon"];
         $uploadDate = $row["upload_time"];
+        $views = $row["views"];
+        $downloads = $row["downloads"];
+
 
         // Display the app details in the table
         echo '<tr>';
@@ -33,6 +38,8 @@ if ($result->num_rows > 0) {
         echo '<td>' . $appName . '</td>';
         echo '<td>' . $uploadDate . '</td>';
         echo '<td><a href="?p=edit&app_id=' . $appid . '">Edit</a></td>';
+        echo '<td>' . $views . '</td>';
+        echo '<td>' . $downloads . '</td>';
         echo '</tr>';
     }
 
