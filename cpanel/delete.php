@@ -6,11 +6,11 @@ if (isset($_POST['app_id'])) {
     $uploaderId = $_SESSION['uploader_id'];
 
     // Delete the app from the database
-    $sql = "DELETE FROM apps WHERE app_id='$appId' AND uploader_id='$uploaderId'";
+    echo $sql = "DELETE FROM apps WHERE app_id='$appId' AND uploader_id='$uploaderId'";
 
     if ($conn->query($sql) === TRUE) {
         echo "App deleted successfully.";
-        header('Location : ../cpanel/?p=apps');
+        //header('Location : ../cpanel/?p=apps');
     } else {
         echo "Error deleting app: " . $conn->error;
     }
