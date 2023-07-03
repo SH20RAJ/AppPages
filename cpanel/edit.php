@@ -1,8 +1,8 @@
 <?php
 
 // Check if the app_name parameter is provided in the URL
-if (isset($_GET['app_id'])) {
-    $appName = $_GET['app_id'];
+if (isset($_REQUEST['app_id'])) {
+    $appName = $_REQUEST['app_id'];
 
     // Retrieve the details of the app from the database
     $sql = "SELECT * FROM apps WHERE app_id = ?";
