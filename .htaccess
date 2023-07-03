@@ -5,7 +5,7 @@ RewriteRule app/(.*)$ app.php/?p=$1
 RewriteRule view/(.*)$ view.php/?p=$1
 RewriteRule view/(.*)-(.*)$ view.php/?p=$1&id=$2
 
-RewriteRule cpanel/(.*)$ cpanel/index.php?p=$1
+#RewriteRule cpanel/(.*)$ cpanel/index.php?p=$1
 
 RewriteRule ^games/(.*)$ /games.php?q=$1 [L]
 
