@@ -1,5 +1,5 @@
 <?php
-include '../conn.php';
+include 'conn.php';
 // Fetch app data from the "apps" table
 $sql = "SELECT * FROM apps where package_name='".$_GET['p']."'";
 $result = $conn->query($sql);
