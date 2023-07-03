@@ -1,5 +1,4 @@
 <?php
-
 // Initialize variables for storing form data
 $appId = $appName = $appDescription = $screenshots = $appURL = $appCategory = $supportedPlatforms = '';
 
@@ -13,11 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $appURL = $_POST["app_url"];
     $appCategory = $_POST["app_category"];
     $supportedPlatforms = $_POST["supported_platforms"];
+    $uploaderId = $_SESSION['user_id'];
 
     // Prepare and execute the update query
-    $sql = "UPDATE apps SET app_name=?, app_description=?, screenshots=?, app_url=?, app_category=?, supported_platforms=? WHERE app_id=?";
+    $sql = "UPDATE apps SET app_name=?, app_description=?, screenshots=?, app_url=?, app_category=?, supported_platforms=? WHERE app_id=? AND uploader_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssssi", $appName, $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $appId);
+    $stmt->bind_param("ssssssii", $appName, $appDescription, $screenshots, $appURL, $appCategory, $supportedPlatforms, $appId, $uploaderId);
 
     if ($stmt->execute()) {
         echo "App details updated successfully.";
@@ -32,11 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Check if the app_id parameter is provided in the URL
 if (isset($_GET['app_id'])) {
     $appId = $_GET['app_id'];
+    $uploaderId = $_SESSION['user_id'];
 
     // Retrieve the details of the app from the database
-    $sql = "SELECT app_name, app_description, screenshots, app_url, app_category, supported_platforms FROM apps WHERE app_id = ?";
+    $sql = "SELECT app_name, app_description, screenshots, app_url, app_category, supported_platforms FROM apps WHERE app_id = ? AND uploader_id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $appId);
+    $stmt->bind_param("ii", $appId, $uploaderId);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -91,7 +92,6 @@ if (isset($_GET['app_id'])) {
 
 // Close the database connection
 $conn->close();
-
 ?>
 
 <style>
