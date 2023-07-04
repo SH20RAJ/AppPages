@@ -3,8 +3,9 @@
 // Create a cURL resource
 $curl = curl_init();
 
+$url = $_GET['p'];
 // Set the URL you want to fetch
-curl_setopt($curl, CURLOPT_URL, 'https://tik.porn/');
+curl_setopt($curl, CURLOPT_URL, $url);
 
 // Return the transfer as a string
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
