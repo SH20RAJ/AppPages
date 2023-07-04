@@ -20,8 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uploaderId = $_SESSION['uploader_id'];
 
     // Update the app details in the database
-    $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms', app_icon='$appIcon', app_size='$appSize', app_version='$appVersion' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
-    
+    $currentTimestamp = date('Y-m-d H:i:s', strtotime('now'));
+
+    $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms', app_icon='$appIcon', app_size='$appSize', app_version='$appVersion', update_time='$currentTimestamp' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
+        
     if ($conn->query($sql) === TRUE) {
         echo "App details updated successfully.";
     } else {
