@@ -78,11 +78,11 @@ $menuItems = [
 
 <ul>
     <li class="d-lg-none">
-        <a class="fbold" href="../../games/<?php echo $menuItems[0]['url']; ?>"><?php echo $menuItems[0]['text']; ?></a>
+        <a class="fbold" href="<?php echo $menuItems[0]['url']; ?>"><?php echo $menuItems[0]['text']; ?></a>
     </li>
     <?php for ($i = 1; $i < count($menuItems); $i++) { ?>
         <li>
-            <a href="<?php echo $menuItems[$i]['url']; ?>">
+            <a href="../../games/<?php echo $menuItems[$i]['url']; ?>">
                 <span><?php echo $menuItems[$i]['text']; ?></span>
             </a>
         </li>
