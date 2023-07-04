@@ -96,8 +96,11 @@ if (isset($_GET['app_id'])) {
         echo '<br>
         <form method="post" action="delete.php">
             <input type="hidden" name="app_id" value="' . $appId . '">
-            <input type="submit" value="Delete App">
-        </form>';
+            <input style="background:red;" type="submit" value="Delete App">
+        </form>
+        <a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a>
+        
+        ';
     } else {
         echo "App not found.";
     }
