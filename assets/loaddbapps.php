@@ -6,7 +6,7 @@
       <div class="app_list">
         <?php
         // Retrieve the latest 20 uploaded apps data from the "apps" table
-        $sql = "SELECT * FROM apps where uploader_id = " . $user . " ";
+        $sql = "SELECT * FROM apps where uploader_id = 2 ORDER BY upload_time DESC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
