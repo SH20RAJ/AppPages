@@ -95,7 +95,7 @@ if (isset($_GET['app_id'])) {
         // Delete App button
         echo '<br>
         
-        <div class="other"><a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a></div>
+        <div class="other"><a target="_blank" href="../../view/'.$appId.'"><button style="background:blue;">View</button></a></div>
         <hr>
         <p style="color: red;">Caution: Deleting this app will permanently remove it from the system. This action cannot be undone. Are you sure you want to proceed?</p>
         <hr>
