@@ -13,8 +13,6 @@ include "assets/head.php";
 
 include "assets/nav.php";
 include "assets/search.php";
-$c = rtrim($_GET['q'], '/') ;
-//include 'assets/main_hero.php';
 
 
 //loadcate($c,ucfirst($c));
