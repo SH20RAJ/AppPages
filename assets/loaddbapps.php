@@ -3,14 +3,15 @@
   <div class="wrp">
     <h1><?php
     include '../conn.php';
-    echo $conn;
     
-    $user = 2; echo $user; ?></h1>
+    $user = 2;
+     echo $user;
+      ?></h1>
     <div class="content">
       <div class="app_list">
         <?php
         // Retrieve the latest uploaded apps data from the "apps" table
-        $sql = "SELECT * FROM apps WHERE uploader_id = " . $user . " ORDER BY upload_time DESC";
+        $sql = "SELECT * FROM apps WHERE uploader_id = " . $user . "";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
