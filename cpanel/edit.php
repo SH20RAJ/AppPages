@@ -82,7 +82,7 @@ if (isset($_GET['app_id'])) {
             <label>App Icon:</label>
             <input type="text" name="app_icon" value="' . $appIcon . '"><br><br>
             
-            <label>App Size:</label>
+            <label>App Size (in bytes):</label>
             <input type="text" name="app_size" value="' . $appSize . '"><br><br>
             
             <label>App Version:</label>
