@@ -97,7 +97,7 @@ if (isset($_GET['app_id'])) {
         
         <div class="other"><a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a></div>
         <hr>
-        <p style='color: red;'>Caution: Deleting this app will permanently remove it from the system. This action cannot be undone. Are you sure you want to proceed?</p>
+        <p style="color: red;">Caution: Deleting this app will permanently remove it from the system. This action cannot be undone. Are you sure you want to proceed?</p>
 
         <form method="post" action="delete.php">
             <input type="hidden" name="app_id" value="' . $appId . '">
