@@ -4,9 +4,9 @@
         <h1>Popular Apps</h1>
         <div class="content">
           <div class="app_list">
-            <?php
+<?php
 // Retrieve the latest 20 uploaded apps data from the "apps" table
-$sql = "SELECT * FROM apps ORDER BY upload_time DESC LIMIT 20";
+$sql = "SELECT * FROM apps ORDER BY upload_time DESC LIMIT 20 where uploader_id = ".$user."";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
