@@ -55,30 +55,30 @@ $extendsvg = '<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0
                   <?php
 $menuItems = [
     ["text" => "All Games", "url" => "/games/"],
-    ["text" => "Action", "url" => "../games/action/"],
-    ["text" => "Adventure", "url" => "../games/adventure/"],
-    ["text" => "Card", "url" => "../games/card/"],
-    ["text" => "Arcade", "url" => "../games/arcade/"],
-    ["text" => "Racing", "url" => "../games/racing/"],
-    ["text" => "Shooter", "url" => "../games/shooter/"],
-    ["text" => "Casual", "url" => "../games/casual/"],
-    ["text" => "Strategy", "url" => "../games/strategy/"],
-    ["text" => "Casino", "url" => "../games/casino/"],
-    ["text" => "Board", "url" => "../games/board/"],
-    ["text" => "Simulation", "url" => "../games/simulation/"],
-    ["text" => "Adventure", "url" => "../games/adventure/"],
-    ["text" => "Trivia", "url" => "../games/trivia/"],
-    ["text" => "Music", "url" => "../games/music/"],
-    ["text" => "Brain", "url" => "../games/brain/"],
-    ["text" => "Puzzle", "url" => "../games/puzzle/"],
-    ["text" => "Brain Puzzle", "url" => "../games/brain-puzzle/"],
-    ["text" => "Family", "url" => "../games/family/"]
+    ["text" => "Action", "url" => "action/"],
+    ["text" => "Adventure", "url" => "adventure/"],
+    ["text" => "Card", "url" => "card/"],
+    ["text" => "Arcade", "url" => "arcade/"],
+    ["text" => "Racing", "url" => "racing/"],
+    ["text" => "Shooter", "url" => "shooter/"],
+    ["text" => "Casual", "url" => "casual/"],
+    ["text" => "Strategy", "url" => "strategy/"],
+    ["text" => "Casino", "url" => "casino/"],
+    ["text" => "Board", "url" => "board/"],
+    ["text" => "Simulation", "url" => "simulation/"],
+    ["text" => "Adventure", "url" => "adventure/"],
+    ["text" => "Trivia", "url" => "trivia/"],
+    ["text" => "Music", "url" => "music/"],
+    ["text" => "Brain", "url" => "brain/"],
+    ["text" => "Puzzle", "url" => "puzzle/"],
+    ["text" => "Brain Puzzle", "url" => "brain-puzzle/"],
+    ["text" => "Family", "url" => "family"]
 ];
 ?>
 
 <ul>
     <li class="d-lg-none">
-        <a class="fbold" href="<?php echo $menuItems[0]['url']; ?>"><?php echo $menuItems[0]['text']; ?></a>
+        <a class="fbold" href="../../games/<?php echo $menuItems[0]['url']; ?>"><?php echo $menuItems[0]['text']; ?></a>
     </li>
     <?php for ($i = 1; $i < count($menuItems); $i++) { ?>
         <li>
