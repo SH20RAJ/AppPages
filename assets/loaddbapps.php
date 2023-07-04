@@ -1,7 +1,7 @@
 <hr hint="popular-apps">
     <div class="page">
       <div class="wrp">
-        <h1><?php echo $user ?></h1>
+        <h1><?php$user = 2; echo $user; ?></h1>
         <div class="content">
           <div class="app_list">
 <?php
@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Loop through the result and fetch app data
     while ($row = $result->fetch_assoc()) {
-        $appName = $row['app_name'];
+        echo $appName = $row['app_name'];
         $appCategory = $row['app_category'];
         $appDescription = $row['app_description'];
         $appVersion = $row['app_version'];
