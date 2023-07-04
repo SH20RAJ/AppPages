@@ -253,7 +253,7 @@ if ($result->num_rows > 0) {
                                  <ul class="spec">
                                     <li><span class="d-block"><b>Updated</b></span> <time itemprop="datePublished" datetime="2023-06-27T00:01:07+03:00"><?php echo $time; ?></time></li>
                                     <li itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
-                                       <span class="d-block"><b>Price</b></span><span itemprop="price" content="0">$0</span>
+                                       <span class="d-block"><b>Views</b></span><span itemprop="price" content="0"><?php echo $views ?></span>
                                        <meta itemprop="priceCurrency" content="USD">
                                     </li>
                                     <li><span class="d-block"><b>Installs</b></span> <?php echo $downloads; ?></li>
