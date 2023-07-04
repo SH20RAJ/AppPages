@@ -6,7 +6,7 @@ $dbname = "u212553073_appspages";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-echo $baseurl = 'https://appspages.online/';
+$baseurl = 'https://appspages.online/';
 // Check connection
 
 ?>
