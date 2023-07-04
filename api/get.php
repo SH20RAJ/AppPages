@@ -10,6 +10,12 @@ curl_setopt($curl, CURLOPT_URL, $url);
 // Return the transfer as a string
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
+// Disable caching
+curl_setopt($curl, CURLOPT_FRESH_CONNECT, true);
+curl_setopt($curl, CURLOPT_FORBID_REUSE, true);
+curl_setopt($curl, CURLOPT_DNS_CACHE_TIMEOUT, 0);
+curl_setopt($curl, CURLOPT_CACHE_NO_STORE, true);
+
 // Execute the request
 $response = curl_exec($curl);
 
