@@ -18,13 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $appSize = $_POST["app_size"];
     $appVersion = $_POST["app_version"];
     $uploaderId = $_SESSION['uploader_id'];
-    $update_time = time();
 
     // Update the app details in the database
     $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms', app_icon='$appIcon', app_size='$appSize', app_version='$appVersion' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
     
     if ($conn->query($sql) === TRUE) {
-        echo " <div style="color:blue;" class="msg">App details updated successfully. ☑️</div>";
+        echo "App details updated successfully.";
     } else {
         echo "Error updating app details: " . $conn->error;
     }
