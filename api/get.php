@@ -4,17 +4,19 @@
 $curl = curl_init();
 
 $url = $_GET['p'];
+
+// Append a unique query parameter to the URL
+$timestamp = time();
+$urlWithQuery = $url . '?timestamp=' . $timestamp;
+
 // Set the URL you want to fetch
-curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_URL, $urlWithQuery);
 
 // Return the transfer as a string
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-// Disable caching
-curl_setopt($curl, CURLOPT_FRESH_CONNECT, true);
-curl_setopt($curl, CURLOPT_FORBID_REUSE, true);
-curl_setopt($curl, CURLOPT_DNS_CACHE_TIMEOUT, 0);
-curl_setopt($curl, CURLOPT_CACHE_NO_STORE, true);
+// Disable caching using Cache-Control header
+curl_setopt($curl, CURLOPT_HTTPHEADER, array('Cache-Control: no-cache'));
 
 // Execute the request
 $response = curl_exec($curl);
