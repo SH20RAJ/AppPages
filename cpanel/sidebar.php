@@ -23,7 +23,7 @@
           </a>
         </li>
         <li>
-          <a href="../user/<?php $_SESSION['uploader_id'] ?>">
+          <a href="../user/<?php echo $_SESSION['uploader_id'] ?>">
             <i class="bx bx-user"></i>
             <span class="links_name">User</span>
           </a>
