@@ -35,11 +35,11 @@
     <div class="cont">
       <div class="data">
         <div class="name">
-          <a href="view?p=$packageName" title="$appName">
+          <a href="../../view/$packageName" title="$appName">
             <span>$appName</span>
           </a>
         </div>
-        <div class="developer xsmf muted">Max Games Studios</div>
+        <div class="developer xsmf muted">AppsPages ✔</div>
       </div>
       <div class="meta muted">
         <div class="rate_star">
