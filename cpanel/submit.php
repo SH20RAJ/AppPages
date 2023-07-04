@@ -44,8 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$appName', '$appCategory', '$appDescription', '$appVersion', '$supportedPlatforms', '$appIcon', '$appSize', '$packageName', '$screenshotPaths', '$appUrl', '$uploaderId')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<div class='msg' style='color:blue;'> App uploaded successfully! </div>";
-        header('Location ../cpanel/?p=apps');
+        echo "<div class='msg' style='color:blue;'> App uploaded successfully! ☑️ </div><script> setTimeout(function() {window.location.href = '../cpanel/?p=apps';}, 1000) })</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
