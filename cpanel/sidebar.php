@@ -1,7 +1,9 @@
 <div class="sidebar active">
       <div class="logo-details">
+        <a href="../">
         <i class="bx bxl-c-plus-plus"></i>
         <span class="logo_name">AppsPages</span>
+        </a>
       </div>
       <ul class="nav-links">
         <li>
