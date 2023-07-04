@@ -1,4 +1,21 @@
 <div class="submit_section">
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById("myForm");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Perform any additional processing or validation here
+
+                // Example: Display a success message
+                alert("Form submitted successfully!");
+
+                // Optionally, you can manually reset the form after submission
+                // form.reset();
+            });
+        });
+    </script>
 <?php
 $uploaderId = $_SESSION['username'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -78,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 
     <h1>App Upload Form</h1>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" id="myForm">
             <label for="app_name">App Name:</label>
             <input type="text" name="app_name" id="app_name" required>
             <br><br>
