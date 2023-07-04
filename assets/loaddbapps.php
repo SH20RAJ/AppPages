@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
         $appUrl = $row['app_url'];
 
               // Use heredoc syntax to define the HTML code
-        $html = <<<HTML
+        //$html = <<<HTML
 <div class="item">
   <div class="item_app mod">
     <div class="img">

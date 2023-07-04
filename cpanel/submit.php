@@ -23,11 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Prepare and execute the SQL query to insert the data into the apps table
-   echo $sql = "INSERT INTO apps (app_name, app_category, app_description, app_version, supported_platforms, app_icon, app_size, package_name, screenshots, app_url, uploader_id)
+   $sql = "INSERT INTO apps (app_name, app_category, app_description, app_version, supported_platforms, app_icon, app_size, package_name, screenshots, app_url, uploader_id)
             VALUES ('$appName', '$appCategory', '$appDescription', '$appVersion', '$supportedPlatforms', '$appIcon', '$appSize', '$packageName', '$screenshotPaths', '$appUrl', '$uploaderId')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "App uploaded successfully!";
+        echo "<div class='msg' style='color:blue;'> App uploaded successfully! </div>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br><br>
 
             <label for="app_icon">App Icon URL:</label>
-            <input type="text" name="app_icon" id="app_icon">
+            <input type="url" name="app_icon" id="app_icon">
             <br><br>
 
             <label for="app_size">App Size (in bytes):</label>
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br><br>
 
             <label for="app_url">App URL:</label>
-            <input type="text" name="app_url" id="app_url">
+            <input type="url" name="app_url" id="app_url">
             <br><br>
 
             <input type="submit" value="Upload App">
