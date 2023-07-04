@@ -13,8 +13,9 @@ include "assets/head.php";
 
 include "assets/nav.php";
 include "assets/search.php";
-$c = $_GET['q'];
+$c = rtrim($_GET['q'], '/') ;
 //include 'assets/main_hero.php';
+
 
 loadcate($c,ucfirst($c));
 //loadapps("Apps",0,0);
