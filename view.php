@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
         $appSize = bytesToMB($row["app_size"]);
         $packageName = $row["package_name"];
         $screenshots = explode(",", $row["screenshots"]);
-        $appUrl = $row["app_url"];
+        $appUrl = '../../assets/download.php?url='.$row["app_url"].'&id='.$row["app_id"];
         $appplat = $row["supported_platforms"];
         $time = $row["upload_time"];
         $downloads = $row["downloads"];
