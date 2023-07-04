@@ -18,7 +18,7 @@
         </li>
         <li>
           <a href="?p=submit">
-            <i class="bx bx-list-ul"></i>
+            <i class="bx bx-plus-fill"></i>
             <span class="links_name">New App</span>
           </a>
         </li>
