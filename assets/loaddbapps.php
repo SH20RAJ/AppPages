@@ -1,7 +1,10 @@
 <hr hint="popular-apps">
 <div class="page">
   <div class="wrp">
-    <h1><?php $user = 2; echo $user; ?></h1>
+    <h1><?php 
+    include '../conn.php';
+    
+    $user = 2; echo $user; ?></h1>
     <div class="content">
       <div class="app_list">
         <?php
