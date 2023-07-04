@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         echo "<div class='msg' style='color:blue;'> App uploaded successfully! </div>";
+        header('Location ../cpanel/?p=apps');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

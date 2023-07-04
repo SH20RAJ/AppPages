@@ -97,8 +97,9 @@ if (isset($_GET['app_id'])) {
         <form method="post" action="delete.php">
             <input type="hidden" name="app_id" value="' . $appId . '">
             <input style="background:red;" type="submit" value="Delete App">
+            <a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a>
         </form>
-        <a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a>
+        
         
         ';
     } else {
