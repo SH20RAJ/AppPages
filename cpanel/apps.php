@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $appName . '</td>';
         echo '<td>' . $uploadDate . '</td>';
         echo '<td><a href="?p=edit&app_id=' . $appid . '">Edit</a></td>';
-        echo '<td>' . $views . '</td>';
+        echo '<td><a href="../view/' . $appid . '">' . $views . '</a></td>';
         echo '<td>' . $downloads . '</td>';
         echo '</tr>';
     }
