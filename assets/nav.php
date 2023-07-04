@@ -72,7 +72,7 @@ $menuItems = [
     ["text" => "Brain", "url" => "brain/"],
     ["text" => "Puzzle", "url" => "puzzle/"],
     ["text" => "Brain Puzzle", "url" => "brain-puzzle/"],
-    ["text" => "Family", "url" => "family"]
+    ["text" => "Family", "url" => "family/"]
 ];
 ?>
 
