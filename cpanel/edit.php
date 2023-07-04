@@ -97,8 +97,9 @@ if (isset($_GET['app_id'])) {
         <form method="post" action="delete.php">
             <input type="hidden" name="app_id" value="' . $appId . '">
             <input style="background:red;" type="submit" value="Delete App">
-            <a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a>
         </form>
+        <div class="other"><a href="../../view/'.$appId.'"><button style="background:blue;">View</button></a></div>
+
         
         
         ';
@@ -117,14 +118,14 @@ $conn->close();
         font-family: Arial, sans-serif;
         background-color: #f1f1f1;
     }
-    .msh {
+    .msg {
         background: green;
         padding : 10px;
         text-align:center;
         color:skyblue;
     }
 
-    form {
+    form, .other {
         max-width: 500px;
         margin: 0 auto;
         background-color: #fff;
@@ -160,7 +161,7 @@ $conn->close();
         height: 100px;
     }
 
-    input[type="submit"],button {
+    input[type="submit"], button {
         background-color: #4CAF50;
         color: #fff;
         border: none;
