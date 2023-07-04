@@ -1,1 +1,1 @@
-echo "ff";
+<?php include 'apps.php' ?>
