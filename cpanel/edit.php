@@ -160,7 +160,7 @@ $conn->close();
         height: 100px;
     }
 
-    input[type="submit"] {
+    input[type="submit"],button {
         background-color: #4CAF50;
         color: #fff;
         border: none;
