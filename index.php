@@ -16,7 +16,35 @@ include "assets/search.php";
 
 include 'assets/main_hero.php';
 
-loadapps("Arcade",'arcade',0);
+$gameGenres = [
+    "action",
+    "adventure",
+    "card",
+    "arcade",
+    "racing",
+    "shooter",
+    "casual",
+    "strategy",
+    "casino",
+    "board",
+    "simulation",
+    "adventure",
+    "trivia",
+    "music",
+    "brain",
+    "puzzle",
+    "brain-puzzle",
+    "family"
+];
+
+
+function getRandomGenre($genres) {
+    $index = array_rand($genres);
+    return $genres[$index];
+}
+$randomGenre = getRandomGenre($gameGenres);
+
+loadapps(ucfirst($randomGenre),$randomGenre,0);
 loadapps("Apps",0,0);
 
 
