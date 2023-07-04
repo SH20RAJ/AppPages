@@ -7,7 +7,7 @@
               <path fill="#68CB5B" d="M6,8l3.5-8h-6L0,8H6z"></path>
             </svg>
           </a>
-          <span class="copyright_i1 fbold">2023. © AppsPages.online</span>
+          <span class="copyright_i1 fbold">2023. &copy; AppsPages.online</span>
           <span class="copyright_i2">Games, programs for android</span>
         </div>
       </div>
