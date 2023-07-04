@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE apps SET app_name='$appName', app_description='$appDescription', screenshots='$screenshots', app_url='$appURL', app_category='$appCategory', supported_platforms='$supportedPlatforms', app_icon='$appIcon', app_size='$appSize', app_version='$appVersion', update_time='$update_time' WHERE app_id='$appId' AND uploader_id='$uploaderId'";
     
     if ($conn->query($sql) === TRUE) {
-        echo "App details updated successfully.";
+        echo " <div style="color:blue;" class="msg">App details updated successfully. ☑️</div>";
     } else {
         echo "Error updating app details: " . $conn->error;
     }
