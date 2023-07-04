@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input[type="text"],
-        textarea {
+        textarea,input[type="url"] {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
