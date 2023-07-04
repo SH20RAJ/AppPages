@@ -9,6 +9,7 @@ function bytesToMB($bytes) {
     return $megabytes;
 }
 
+
 if ($result->num_rows > 0) {
     // Output data for each app
     while ($row = $result->fetch_assoc()) {
@@ -284,6 +285,10 @@ $title = 'Releted Apps';
 $newurl = 'https://ws75.aptoide.com/api/7/apps/getRecommended?limit=21&app_id='.$app_id;
 include 'assets/loadapps.php';
 include('assets/footer.php');
+
+$sql = "UPDATE apps SET views = views + 1 where package_name='".$_GET['p']."' or app_id='".$_GET['p']."'";
+$conn->query($sql) ;
+
 ?>
       <script src="index.js"></script>
    </body>
