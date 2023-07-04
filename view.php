@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
         $appUrl = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
         $appplat = $row["supported_platforms"];
         $time = $row["upload_time"];
+        $update_time = $row["update_time"];
         $downloads = $row["downloads"];
         $views = $row["views"];
         $verified = $row["verified"];
@@ -257,7 +258,7 @@ if ($result->num_rows > 0) {
                                        <meta itemprop="priceCurrency" content="USD">
                                     </li>
                                     <li><span class="d-block"><b>Installs</b></span> <?php echo $downloads; ?></li>
-                                    <li><span class="d-block"><b>Last Updated</b></span> <?php echo $time; ?></li>
+                                    <li><span class="d-block"><b>Last Updated</b></span> <?php echo $update_time; ?></li>
                                  </ul>
                               </div>
                            </div>
