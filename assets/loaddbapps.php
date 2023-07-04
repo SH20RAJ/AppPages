@@ -3,6 +3,7 @@
   <div class="wrp">
     <h1><?php
     include './conn.php';
+    echo $conn;
     
     $user = 2; echo $user; ?></h1>
     <div class="content">
