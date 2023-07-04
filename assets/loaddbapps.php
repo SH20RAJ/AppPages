@@ -12,7 +12,7 @@
         if ($result->num_rows > 0) {
             // Loop through the result and fetch app data
             foreach ($result as $row) {
-                echo $row['app_name'];
+                echo $row['app_name'].'<br/>';
             }
         } else {
             echo "No apps found.";
