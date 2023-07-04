@@ -5,16 +5,21 @@
     <div class="content">
       <div class="app_list">
         <?php
-        // Retrieve the latest 20 uploaded apps data from the "apps" table
-        $sql = "SELECT * FROM apps where uploader_id = " . $user . " ORDER BY upload_time DESC";
+        // Retrieve the latest uploaded apps data from the "apps" table
+        $sql = "SELECT * FROM apps WHERE uploader_id = " . $user . " ORDER BY upload_time DESC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // Loop through the result and fetch app data
             while ($row = $result->fetch_assoc()) {
-                ehco $appName = $row['app_name'];
+                foreach ($row as $key => $value) {
+                    echo $key . ": " . $value . "<br>";
+                }
+                echo "<br>";
             }
-        } 
+        } else {
+            echo "No apps found.";
+        }
         ?>
       </div>
     </div>
