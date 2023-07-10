@@ -13,10 +13,15 @@ include "assets/head.php";
 include "assets/nav.php";
 include "assets/search.php";
 
-
-//loadcate($c,ucfirst($c));
+if(!isset($_GET['user'])){
+  include 'assets/loaddbapps.php';
+} else {
+  //loadcate($c,ucfirst($c));
 $user = $_GET['user'];
 include 'assets/loaddbapps.php';
+}
+
+
 
 
 //include 'assets/loaddbapps.php';
