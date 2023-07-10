@@ -101,9 +101,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label for="app_category">App Category:</label>
             <select name="app_category" id="app_category" required>
-                <option value="Games">Games</option>
-                <option value="Social">Social</option>
-                <option value="Productivity">Productivity</option>
+            <option value="Games">Games</option>
+            <option value="Social">Social</option>
+            <option value="Productivity">Productivity</option>
+            <option value="Finance">Finance</option>
+            <option value="Health">Health</option>
+            <option value="Education">Education</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Travel">Travel</option>
+            <option value="Music">Music</option>
+            <option value="Food">Food</option>
+            <option value="Sports">Sports</option>
+            <option value="News">News</option>
+            <option value="Weather">Weather</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Photography">Photography</option>
+            <option value="Books">Books</option>
+            <option value="Art">Art</option>
+            <option value="Communication">Communication</option>
                 <!-- Add more options as needed -->
             </select>
             <br><br>
@@ -136,9 +153,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="package_name">Package Name:</label>
             <input type="text" name="package_name" id="package_name">
             <br><br>
+            <div id="dropzone" style="width: 300px; height: 200px; border: 2px dashed #ccc; border-radius: 5px; text-align: center; line-height: 200px; margin: 20px auto;">Drag and drop images here</div>
+            <input type="file" id="fileInput" multiple onchange="handleFileInputChange(event)" style="display: none;">
+            <label for="fileInput" style="display: block; text-align: center; cursor: pointer;">Select Images</label>
+            <textarea name="screenshots" id="screenshots" rows="10" cols="50" ></textarea>
 
-            <label for="screenshots">Screenshots (Enter URLs, one per line):</label>
-            <textarea name="screenshots" id="screenshots" rows="4"></textarea>
+  <script>
+    const dropzone = document.getElementById('dropzone');
+    const screenshotsTextarea = document.getElementById('screenshots');
+
+    // Prevent default behavior for drag events
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropzone.addEventListener(eventName, preventDefaults, false);
+    });
+
+    // Handle drag enter and drag over events
+    function preventDefaults(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // Handle drop event
+    dropzone.addEventListener('drop', handleDrop, false);
+
+    // Handle file input change event
+    function handleFileInputChange(event) {
+      const files = event.target.files;
+      uploadFiles(files);
+    }
+
+    // Handle dropped images
+    function handleDrop(event) {
+      const files = event.dataTransfer.files;
+      uploadFiles(files);
+    }
+
+    // Upload multiple files to Imgur
+    function uploadFiles(files) {
+      const clientId = '6db47bd7029562d'; // Replace with your Imgur client ID
+
+      // Loop through each file and upload to Imgur
+      Array.from(files).forEach(file => {
+        const formData = new FormData();
+        formData.append('image', file);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://api.imgur.com/3/image');
+        xhr.setRequestHeader('Authorization', `Client-ID ${clientId}`);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            const imgurLink = response.data.link;
+            addToScreenshotsTextarea(imgurLink);
+          } else {
+            console.error('Error uploading image to Imgur:', xhr.status);
+          }
+        };
+        xhr.send(formData);
+      });
+    }
+
+    // Add image link to screenshots textarea
+    function addToScreenshotsTextarea(imgurLink) {
+      screenshotsTextarea.value += imgurLink + '\n';
+    }
+  </script>
+
+
             <br><br>
 
             <label for="app_url">App URL:</label>
