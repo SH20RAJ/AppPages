@@ -9,7 +9,7 @@
       <div class="app_list">
         <?php
         // Retrieve the latest 20 uploaded apps data from the "apps" table
-        $sql = "SELECT * FROM apps";
+        $sql = "SELECT * FROM apps ORDER BY app_id DESC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

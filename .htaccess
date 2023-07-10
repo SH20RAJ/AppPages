@@ -2,7 +2,7 @@ RewriteEngine On
 
 RewriteRule app/(.*)$ app.php/?p=$1
 RewriteRule user/(.*)$ user.php/?user=$1
-
+RewriteRule users user.php
 
 
 RewriteRule view/(.*)$ view.php/?p=$1
