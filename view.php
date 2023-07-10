@@ -225,7 +225,7 @@ if ($result->num_rows > 0) {
                                     <use xlink:href="#i__download"></use>
                                  </svg>
                               </i>
-                              Download <?php echo $appName ;?>  <?php echo $appVersion ; ?>.apk
+                              Download <?php echo $appName ;?> - <?php echo $appVersion ; ?>.apk
                            </div>
                            <i class="size"><?php echo $appSize; ?>Mb</i> 
                         </a>

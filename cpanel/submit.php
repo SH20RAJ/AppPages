@@ -140,11 +140,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="package_name" id="package_name">
             <br><br>
             <div id="dropzone" style="width: 300px; height: 200px; border: 2px dashed #ccc; border-radius: 5px; text-align: center; line-height: 200px; margin: 20px auto;">Drag and drop images here</div>
-            <input type="file" id="fileInput" multiple onchange="handleFileInputChange(event)" style="display: none;">
+            <input type="file" id="fileInput" onchange="handleFileInputChange(event)" style="display: none;" multiple>
             <label for="fileInput" style="display: block; text-align: center; cursor: pointer;">Select Images</label>
             <span>Enter Screenshot URLs (one-per-line) | <a target="_blank" href="https://www.youtube.com/watch?v=ENz0cu0rFXI">Free Image Hosting</a></span>
             <textarea name="screenshots" id="screenshots" rows="10" cols="50" ></textarea>
-
+            
             <script>
                 const dropzone = document.getElementById('dropzone');
                 const screenshotsTextarea = document.getElementById('screenshots');
