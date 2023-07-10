@@ -196,7 +196,7 @@ $menuItems = [
                 </div>
               </li>-->
               <li>
-                <a class="xsmf fbold" href="/news/">
+                <a class="xsmf fbold" href="../../users">
                   <i>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       <rect fill="none" width="24" height="24"></rect>
@@ -204,7 +204,7 @@ $menuItems = [
                       <path fill="currentColor" d="M7.9,11.5c-1.4,2.3-0.8,5.3,1.5,6.8c2.2,1.4,5.1,0.8,6.6-1.3C12.5,16.8,9.3,14.7,7.9,11.5z"></path>
                     </svg>
                   </i>
-                  <span>News</span>
+                  <span>Users</span>
                 </a>
                 <div class="submenu">
                   <button onclick="this.parentElement.classList.toggle('open');" class="toggle_submenu muted" type="button">
@@ -212,7 +212,7 @@ $menuItems = [
                   </button>
                   <ul>
                     <li class="d-lg-none">
-                      <a class="fbold" href="/news/">All News</a>
+                      <a class="fbold" href="/users/">All Users</a>
                     </li>
                     <li>
                       <a href="../news/android/">
@@ -238,7 +238,7 @@ $menuItems = [
                 </div>
               </li>
               <li>
-                <a class="xsmf fbold" href="/articles/">
+                <a class="xsmf fbold" href="https://appspages.hashnode.dev/">
                   <i>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       <rect x="0" fill="none" width="24" height="24"></rect>
@@ -255,7 +255,7 @@ $menuItems = [
                   </button>
                   <ul>
                     <li class="d-lg-none">
-                      <a class="fbold" href="/articles/">All Articles</a>
+                      <a class="fbold" href="https://appspages.hashnode.dev/">All Articles</a>
                     </li>
                     <li>
                       <a href="../articles/interview/">
