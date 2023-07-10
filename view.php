@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
         $verified = $row["verified"];
         $rating = '5';
         $ratingcounter = '1000000';
+        $developer = $row['uploader_id'];
     }
 } else {
     echo "No apps found in the database.";
@@ -112,7 +113,8 @@ if ($result->num_rows > 0) {
                            </div>
                         </div>
                         <div class="developer smf muted" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"> <span itemprop="name">
-                           <?php echo $developer.'<br/>'.$packageName ;?>
+                           <a href="../../user/<?php echo $developer ?>"><?php echo $developer ?></a> <br>
+                           <a href="../../view/<?php echo $packageName ?>"><?php echo $packageName ?></a> <br>
                         </span> </div>
                         <div class="description">
                            <div id="spoiler" class="spoiler" itemprop="description"><?php echo $appDesc ;?>  </div>
