@@ -162,71 +162,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <span>Enter Screenshot URLs (one-per-line) | <a target="_blank" href="https://www.youtube.com/watch?v=ENz0cu0rFXI">Free Image Hosting</a></span>
             <textarea name="screenshots" id="screenshots" rows="10" cols="50" ></textarea>
 
-  <script>
-    const dropzone = document.getElementById('dropzone');
-    const screenshotsTextarea = document.getElementById('screenshots');
+            <script>
+                const dropzone = document.getElementById('dropzone');
+                const screenshotsTextarea = document.getElementById('screenshots');
 
-    // Prevent default behavior for drag events
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-      dropzone.addEventListener(eventName, preventDefaults, false);
-    });
+                // Prevent default behavior for drag events
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropzone.addEventListener(eventName, preventDefaults, false);
+                });
 
-    // Handle drag enter and drag over events
-    function preventDefaults(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+                // Handle drag enter and drag over events
+                function preventDefaults(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
 
-    // Handle drop event
-    dropzone.addEventListener('drop', handleDrop, false);
+                // Handle drop event
+                dropzone.addEventListener('drop', handleDrop, false);
 
-    // Handle file input change event
-    function handleFileInputChange(event) {
-      const files = event.target.files;
-      uploadFiles(files);
-    }
+                // Handle file input change event
+                function handleFileInputChange(event) {
+                const files = event.target.files;
+                uploadFiles(files);
+                }
 
-    // Handle dropped images
-    function handleDrop(event) {
-      const files = event.dataTransfer.files;
-      uploadFiles(files);
-    }
+                // Handle dropped images
+                function handleDrop(event) {
+                const files = event.dataTransfer.files;
+                uploadFiles(files);
+                }
 
-    // Upload multiple files to Imgur
-    function uploadFiles(files) {
-      const clientId = '6db47bd7029562d'; // Replace with your Imgur client ID
+                // Upload multiple files to Imgur
+                function uploadFiles(files) {
+                const clientId = '6db47bd7029562d'; // Replace with your Imgur client ID
 
-      // Loop through each file and upload to Imgur
-      Array.from(files).forEach(file => {
-        const formData = new FormData();
-        formData.append('image', file);
+                // Loop through each file and upload to Imgur
+                Array.from(files).forEach(file => {
+                    const formData = new FormData();
+                    formData.append('image', file);
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://api.imgur.com/3/image');
-        xhr.setRequestHeader('Authorization', `Client-ID ${clientId}`);
-        xhr.onload = function () {
-          if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-            const imgurLink = response.data.link;
-            addToScreenshotsTextarea(imgurLink);
-          } else {
-            console.error('Error uploading image to Imgur:', xhr.status);
-          }
-        };
-        xhr.send(formData);
-      });
-    }
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'https://api.imgur.com/3/image');
+                    xhr.setRequestHeader('Authorization', `Client-ID ${clientId}`);
+                    xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        const imgurLink = response.data.link;
+                        addToScreenshotsTextarea(imgurLink);
+                    } else {
+                        console.error('Error uploading image to Imgur:', xhr.status);
+                    }
+                    };
+                    xhr.send(formData);
+                });
+                }
 
-    // Add image link to screenshots textarea
-    function addToScreenshotsTextarea(imgurLink) {
-      screenshotsTextarea.value += imgurLink + '\n';
-    }
-  </script>
+                // Add image link to screenshots textarea
+                function addToScreenshotsTextarea(imgurLink) {
+                screenshotsTextarea.value += imgurLink + '\n';
+                }
+            </script>
 
 
             <br><br>
 
-            <label for="app_url">App URL:</label>
+            <label for="app_url">App URL: <a target="_blank" href="https://github.com/new">Free File Hosting</a></span></label>
             <input type="url" name="app_url" id="app_url">
             <br><br>
 
