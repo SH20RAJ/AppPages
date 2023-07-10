@@ -143,6 +143,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br><br>
 
             <label for="app_icon">App Icon URL:</label>
+            <div id="dropzone">Drag and drop an icon here</div>
+            <input type="file" id="fileInput" onchange="handleFileInputChange(event)" style="display: none;">
+            <label for="fileInput" style="display: block; text-align: center; cursor: pointer;">Select Image</label>
             <input type="url" name="app_icon" id="app_icon">
             <br><br>
 
