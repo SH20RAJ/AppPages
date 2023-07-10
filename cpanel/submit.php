@@ -1,21 +1,4 @@
 <div class="submit_section">
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var form = document.getElementById("myForm");
-
-            form.addEventListener("submit", function(event) {
-                event.preventDefault(); // Prevent form submission
-
-                // Perform any additional processing or validation here
-
-                // Example: Display a success message
-                alert("Form submitted successfully!");
-
-                // Optionally, you can manually reset the form after submission
-                // form.reset();
-            });
-        });
-    </script>
 <?php
 $uploaderId = $_SESSION['username'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
