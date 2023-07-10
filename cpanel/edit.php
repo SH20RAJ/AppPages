@@ -67,7 +67,7 @@ if (isset($_GET['app_id'])) {
             <label>App Description:</label>
             <textarea name="app_description">' . $appDescription . '</textarea><br><br>
             
-            <label>Screenshots:</label>
+            <label>Screenshots: ( Separate Using comma )</label>
             <textarea name="screenshots">' . $screenshots . '</textarea><br><br>
             
             <label>App URL:</label>
