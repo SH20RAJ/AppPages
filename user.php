@@ -14,7 +14,7 @@ include "assets/nav.php";
 include "assets/search.php";
 
 if(!isset($_GET['user'])){
-  include 'assets/loaddbapps.php';
+  include 'assets/loaddbapps2.php';
 } else {
   //loadcate($c,ucfirst($c));
 $user = $_GET['user'];
