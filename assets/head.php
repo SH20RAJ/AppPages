@@ -48,5 +48,6 @@
     <link href="../../site.css" type="text/css" rel="stylesheet" />
     <script async="" src="https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"></script>
     <script src="https://rebrand.ly/AutoTopBarJS"></script>
+    <script defer data-cfasync='false' src='https://s.clickiocdn.com/t/230897_wv.js'></script>
 
   </head>
