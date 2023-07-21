@@ -297,13 +297,13 @@ $menuItems = [
             </ul>
             <ul class="head_menu_s d-lg-none">
               <li>
-                <a href="/dmca.php">DMCA Policy</a>
+                <a href="assets/dmca.php">DMCA Policy</a>
               </li>
               <li>
-                <a href="/privacy-policy.php">Privacy Policy</a>
+                <a href="assets/privacy-policy.php">Privacy Policy</a>
               </li>
               <li>
-                <a href="/index.php?do=feedback">Feedback</a>
+                <a href="mailto:mail@appspages.online">Feedback</a>
               </li>
             </ul>
             <div class="head_menu_s_foot d-lg-none">
@@ -317,7 +317,7 @@ $menuItems = [
                     <use xlink:href="#i__tg"></use>
                   </svg>
                 </a>
-                <a class="soc_fb" href="https://www.facebook.com/cxdiin" rel="noopener nofollow" target="_blank">
+                <a class="soc_fb" href="#" rel="noopener nofollow" target="_blank">
                   <svg class="i__fb" width="32" height="32">
                     <use xlink:href="#i__fb"></use>
                   </svg>
