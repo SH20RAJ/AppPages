@@ -72,6 +72,8 @@ ob_end_flush(); // Flush the output buffer
 <html>
 <head>
   <title>User Login and Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
