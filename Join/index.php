@@ -73,6 +73,7 @@ ob_end_flush(); // Flush the output buffer
 <head>
   <title>User Login and Signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
 
   <style>
     body {
