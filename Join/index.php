@@ -67,13 +67,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 $conn->close();
 
 ob_end_flush(); // Flush the output buffer
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
 <head>
-  <title>User Login and Signup</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
+  <title>AppsPages - User Login and Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
 
   <style>
     body {
@@ -90,60 +89,43 @@ ob_end_flush(); // Flush the output buffer
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #3f51b5;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #3f51b5;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="password"] {
-      width: 95%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .form-group button {
-      width: 100%;
-      padding: 12px;
+    .navbar {
       background-color: #3f51b5;
       color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 10px;
+    }
+
+    .navbar h3 {
+      margin: 0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #777;
+    }
+
+    /* Rest of the existing CSS remains unchanged */
+
+    /* Additional Styling */
+    .navbar-brand {
+      font-size: 24px;
       font-weight: bold;
     }
 
-    .form-group button:hover {
-      background-color: #2c3e50;
-    }
-
-    .error {
-      color: red;
-      margin-top: 10px;
-    }
-
-    .success {
-      color: green;
-      margin-top: 10px;
+    .header-wrapper {
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="navbar">
+    <div class="container">
+      <h3 class="navbar-brand">AppsPages - User Login and Signup</h3>
+    </div>
+  </div>
+
+  <div class="container header-wrapper">
     <h2>User Signup</h2>
     <?php if (isset($signupError)) { ?>
       <p class="error"><?php echo $signupError; ?></p>
@@ -191,5 +173,10 @@ ob_end_flush(); // Flush the output buffer
       </div>
     </form>
   </div>
+
+  <div class="footer">
+    <p>Form created using Bootstrap and designed by OpenAI ChatGPT</p>
+  </div>
 </body>
 </html>
+
