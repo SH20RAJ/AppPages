@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
         $storedPassword = $row["password"];
 
         // Verify the password
-        if ($password === $storedPassword) {
+        if ($password == $storedPassword) {
             // Password is correct, proceed with login
             session_start();
             $_SESSION["username"] = $username;
