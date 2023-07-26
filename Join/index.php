@@ -74,49 +74,6 @@ ob_end_flush(); // Flush the output buffer
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar {
-      background-color: #3f51b5;
-      color: #fff;
-      padding: 10px;
-    }
-
-    .navbar h3 {
-      margin: 0;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-      color: #777;
-    }
-
-    /* Rest of the existing CSS remains unchanged */
-
-    /* Additional Styling */
-    .navbar-brand {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .header-wrapper {
-      margin-bottom: 30px;
-    }
-  </style>
 </head>
 <body>
   <div class="navbar">
