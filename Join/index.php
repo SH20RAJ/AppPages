@@ -56,39 +56,46 @@
   <div class="footer">
     <p>Form created using Bootstrap and designed by OpenAI ChatGPT</p>
   </div>
-
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Signup form submission
-      $("#signup-form").submit(function(event) {
-        event.preventDefault();
-        var formData = $(this).serialize();
-        $.post("api.php", formData, function(response) {
-          if (response.success) {
-            $("#signup-success").html(response.message).show();
-            $("#signup-error").hide();
-          } else {
-            $("#signup-error").html(response.message).show();
-            $("#signup-success").hide();
-          }
-        }, "json");
-      });
-
-      // Login form submission
-      $("#login-form").submit(function(event) {
-        event.preventDefault();
-        var formData = $(this).serialize();
-        $.post("api.php", formData, function(response) {
-          if (response.success) {
-            window.location.href = "dashboard.php"; // Replace with your dashboard page URL
-          } else {
-            $("#login-error").html(response.message).show();
-          }
-        }, "json");
-      });
+<!-- ... Existing HTML code ... -->
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Signup form submission
+    $("#signup-form").submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+      $.post("api.php", formData, function(response) {
+        handleResponse(response); // Process the JSON response
+      }, "json");
     });
-  </script>
+
+    // Login form submission
+    $("#login-form").submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+      $.post("api.php", formData, function(response) {
+        handleResponse(response); // Process the JSON response
+      }, "json");
+    });
+
+    // Function to handle the JSON response
+    function handleResponse(response) {
+      if (response && response.success !== undefined) {
+        if (response.success) {
+          $("#signup-success").html(response.message).show();
+          $("#signup-error").hide();
+        } else {
+          $("#signup-error").html(response.message).show();
+          $("#signup-success").hide();
+        }
+      } else {
+        console.log("Invalid JSON response:", response);
+      }
+    }
+  });
+</script>
+<!-- ... Rest of the HTML code ... -->
+
 </body>
 </html>
