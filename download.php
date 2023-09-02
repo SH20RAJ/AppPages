@@ -20,9 +20,9 @@ if ($result->num_rows > 0) {
         $appSize = bytesToMB($row["app_size"]);
         $packageName = $row["package_name"];
         $screenshots = explode(",", $row["screenshots"]);
-        $appUrl = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
+        echo $appUrl = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
 
-        header("Location: $appUrl");
+        //header("Location: $appUrl");
 
 } else {
     echo "No App Found";
