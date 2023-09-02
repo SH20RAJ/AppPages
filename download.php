@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
     </table>
 
     <center>
-        <h1>Check for Virus :- 
+        <h1>Checking for Virus is  !important - Do Manual Virus Check of files if the link isn't a direct download link...</h1>
 <?php
 
 ?>
