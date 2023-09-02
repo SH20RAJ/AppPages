@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
             <td><?php echo implode(', ', $screenshots); ?></td>
         </tr>
         <tr>
-            <th>App URL</th>
+            <th>App Download URL</th>
             <td><?php echo $appUrl; ?></td>
         </tr>
         <tr>
@@ -122,6 +122,18 @@ if ($result->num_rows > 0) {
             <td><?php echo $developer; ?></td>
         </tr>
     </table>
+
+    <center>
+        <h1>Check for Virus :- 
+<?php
+$encoded_url = urlencode(urlencode($AppUrl));
+
+echo "https://www.virustotal.com/gui/search/".$encoded_url;
+
+?>
+</h1>
+    </center>
+
 </body>
 </html>
 
