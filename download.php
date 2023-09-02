@@ -86,6 +86,11 @@ if ($result->num_rows > 0) {
             <td><?php echo $appUrl; ?></td>
         </tr>
         <tr>
+            <th>VirusTotal Virus Check</th>
+            <td><?php $encoded_url = urlencode(urlencode($appUrl));
+            $url = "https://www.virustotal.com/gui/search/".$encoded_url ; echo "<a href='".$url."' target='_blank'>Check For Virus (Direct Download URLs)</a>" ; ?></td>
+        </tr>
+        <tr>
             <th>Supported Platforms</th>
             <td><?php echo $appplat; ?></td>
         </tr>
@@ -126,9 +131,6 @@ if ($result->num_rows > 0) {
     <center>
         <h1>Check for Virus :- 
 <?php
-$encoded_url = urlencode(urlencode($appUrl));
-
-echo "https://www.virustotal.com/gui/search/".$encoded_url;
 
 ?>
 </h1>
