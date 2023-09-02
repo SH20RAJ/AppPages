@@ -22,6 +22,15 @@ if ($result->num_rows > 0) {
         $screenshots = explode(",", $row["screenshots"]);
         $appUrl = $row['app_url'];
         $appUrl2 = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
+        $appplat = $row["supported_platforms"];
+        $time = $row["upload_time"];
+        $update_time = $row["update_time"];
+        $downloads = $row["downloads"];
+        $views = $row["views"];
+        $verified = $row["verified"];
+        $rating = '5';
+        $ratingcounter = '1000000';
+        $developer = $row['uploader_id'];
 
         //header("Location: $appUrl");
 
