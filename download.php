@@ -10,8 +10,8 @@ function bytesToMB($bytes) {
 }
 
 
-//if ($result->num_rows > 0) {
-
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
         echo $appName = $row["app_name"];
         $appCategory = $row["app_category"];
         $appDesc = $row["app_description"];
@@ -25,8 +25,8 @@ function bytesToMB($bytes) {
 
         //header("Location: $appUrl");
 
-//} else {
+} else {
     echo "No App Found";
-//}
+}
 
 
