@@ -1,7 +1,7 @@
 <?php
 include 'conn.php';
 // Fetch app data from the "apps" table
-echo $sql = "SELECT * FROM apps where package_name='".$_GET['p']."' or app_id='".$_GET['p']."' ";
+echo $sql = "SELECT * FROM apps where package_name='".$_GET['id']."' or app_id='".$_GET['id']."' ";
 $result = $conn->query($sql);
 
 function bytesToMB($bytes) {
