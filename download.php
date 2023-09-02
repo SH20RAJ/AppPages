@@ -20,8 +20,8 @@ if ($result->num_rows > 0) {
         $appSize = bytesToMB($row["app_size"]);
         $packageName = $row["package_name"];
         $screenshots = explode(",", $row["screenshots"]);
-         $row['app_url'];
-        //echo $appUrl = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
+        $appUrl = $row['app_url'];
+        $appUrl2 = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
 
         //header("Location: $appUrl");
 
