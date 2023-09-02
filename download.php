@@ -126,7 +126,7 @@ if ($result->num_rows > 0) {
     <center>
         <h1>Check for Virus :- 
 <?php
-$encoded_url = urlencode(urlencode($AppUrl));
+$encoded_url = urlencode(urlencode($appUrl));
 
 echo "https://www.virustotal.com/gui/search/".$encoded_url;
 
