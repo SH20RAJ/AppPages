@@ -1,7 +1,7 @@
 <?php
 include 'conn.php';
 // Fetch app data from the "apps" table
-echo $sql = "SELECT * FROM apps where package_name='".$_GET['id']."' or app_id='".$_GET['id']."' ";
+echo $sql = "SELECT * FROM apps where app_id='".$_GET['id']."' ";
 $result = $conn->query($sql);
 
 function bytesToMB($bytes) {
@@ -10,7 +10,7 @@ function bytesToMB($bytes) {
 }
 
 
-if ($result->num_rows > 0) {
+//if ($result->num_rows > 0) {
 
         echo $appName = $row["app_name"];
         $appCategory = $row["app_category"];
@@ -25,8 +25,8 @@ if ($result->num_rows > 0) {
 
         //header("Location: $appUrl");
 
-} else {
+//} else {
     echo "No App Found";
-}
+//}
 
 
