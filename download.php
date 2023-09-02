@@ -12,7 +12,7 @@ function bytesToMB($bytes) {
 
 if ($result->num_rows > 0) {
 
-        $appName = $row["app_name"];
+        echo $appName = $row["app_name"];
         $appCategory = $row["app_category"];
         $appDesc = $row["app_description"];
         $appVersion = $row["app_version"];
@@ -20,7 +20,8 @@ if ($result->num_rows > 0) {
         $appSize = bytesToMB($row["app_size"]);
         $packageName = $row["package_name"];
         $screenshots = explode(",", $row["screenshots"]);
-        echo $appUrl = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
+        echo $row['app_url'];
+        //echo $appUrl = '../../assets/download.php?url='.urlencode($row["app_url"]).'&id='.$row["app_id"];
 
         //header("Location: $appUrl");
 
