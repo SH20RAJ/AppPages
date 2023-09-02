@@ -83,7 +83,7 @@ if ($result->num_rows > 0) {
         </tr>
         <tr>
             <th>App Download URL</th>
-            <td><?php echo $appUrl; ?></td>
+            <td><?php echo $appUrl."( Download Link Provided by Uploader!!! )"; ?></td>
         </tr>
         <tr>
             <th>VirusTotal Virus Check</th>
