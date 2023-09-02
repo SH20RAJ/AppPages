@@ -129,10 +129,11 @@ if ($result->num_rows > 0) {
     </table>
 
     <center>
+        <h1>Download :- <a href="<?php
+echo $appUrl;
+?>">Download Link :- <?php echo $appUrl; ?></a></h1>
         <h1>Checking for Virus is  !important - Do Manual Virus Check of files if the link isn't a direct download link...</h1>
-<?php
 
-?>
 </h1>
     </center>
 
