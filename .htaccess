@@ -11,5 +11,6 @@ RewriteRule view/(.*)-(.*)$ view.php/?p=$1&id=$2
 #RewriteRule cpanel/(.*)$ cpanel/index.php?p=$1
 
 RewriteRule ^games/(.*)$ /games.php?q=$1 [L]
+RewriteRule ^download/(.*)$ /download.php?id=$1 [L]
 
 ErrorDocument 404 /index.php
