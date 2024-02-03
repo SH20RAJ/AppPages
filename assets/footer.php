@@ -26,6 +26,9 @@
             <li>
               <a href="/assets/contact.php">Feedback</a>
             </li>
+              li>
+              <a href="https://codexdindia.blogspot.com/2024/02/keyboard-shortcut-showdown-mac-vs.html" rel="dofolllow">CXDIIN</a>
+            </li>
           </ul>
           <div class="social" title="Read Us">
             <a class="soc_tg" href="https://t.me/android1com" rel="noopener nofollow" target="_blank">
