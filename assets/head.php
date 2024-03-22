@@ -43,9 +43,9 @@
     <link rel="mask-icon" href="https://an1.com/templates/an1/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="preload" href="https://an1.com/templates/an1/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin="" />
     <link rel="preload" href="https://an1.com/templates/an1/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin="" />-->
-    <link rel="preload" href="https://appspages.online/site.css" as="style" />
-    <link href="https://appspages.online/site.css" rel="style" />
-    <link href="../../site.css" type="text/css" rel="stylesheet" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/SH20RAJ/AppPages@main/site.css" as="style" />
+    <link href="https://cdn.jsdelivr.net/gh/SH20RAJ/AppPages@main/site.css" rel="style" />
+    <link href="https://cdn.jsdelivr.net/gh/SH20RAJ/AppPages@main/site.css" type="text/css" rel="stylesheet" />
     <script async="" src="https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"></script>
     <script src="https://rebrand.ly/AutoTopBarJS"></script>
     <script defer data-cfasync='false' src='https://s.clickiocdn.com/t/230897_wv.js'></script>
