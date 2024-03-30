@@ -195,7 +195,7 @@ $menuItems = [
                   </ul>
                 </div>
               </li>-->
-              <li>
+              <!-- <li>
                 <a class="xsmf fbold" href="../../users">
                   <i>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -293,7 +293,7 @@ $menuItems = [
                   </i>
                   <span>FAQ</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
             <ul class="head_menu_s d-lg-none">
               <li>
