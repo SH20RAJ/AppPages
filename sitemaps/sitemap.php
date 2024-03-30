@@ -25,7 +25,7 @@ do {
     // Update offset for the next iteration
     $offset = $data['datalist']['next'] ?? null;
 
-} while ($offset !== null && $totalUrls < 10000);
+} while ($totalUrls < 10000);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
