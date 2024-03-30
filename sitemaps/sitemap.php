@@ -12,7 +12,7 @@ $totalUrls = 0;
 $allData = [];
 
 do {
-    $url = "https://ws2-cache.aptoide.com/api/7/listApps?limit=$limit&offset=$offset&sort=trending60d";
+    $url = "https://ws2-cache.aptoide.com/api/7/listApps?limit=$limit&offset=$offset";
     $json = file_get_contents($url);
     $data = json_decode($json, true);
 
@@ -30,7 +30,7 @@ do {
         break;
     }
 
-} while ($totalUrls < 1000);
+} while ($totalUrls < 10000);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
