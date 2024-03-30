@@ -30,7 +30,7 @@ do {
         break;
     }
 
-} while ($totalUrls < 10000);
+} while ($totalUrls < 1000);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
