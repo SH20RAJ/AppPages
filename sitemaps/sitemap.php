@@ -17,13 +17,13 @@ do {
     $data = json_decode($json, true);
 
     // Check if data was successfully retrieved
-    if ($data && isset($data['datalist']['list']) && !empty($data['datalist']['list'])) {
+    if ($data) {
         $allData = array_merge($allData, $data['datalist']['list']);
         $totalUrls += count($data['datalist']['list']);
     }
 
     // Update offset for the next iteration
-    $offset = $data['datalist']['next'] ?? null;
+    $offset = $data['datalist']['next'] ;
 
     // Stop if total URLs reaches the total from API
     if ($totalUrls >= $data['datalist']['total']) {
