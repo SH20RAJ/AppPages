@@ -25,7 +25,9 @@
     <meta property="og:image:height" content="180" />
     <meta property="og:title" content="AppsPages : Make Your App's Page Online" />
     <meta property="og:description" content="Free Games and Programs, you can download for free, a lot popular games with MOD for Android." />
-    <link rel="canonical" href="https://appspages.online/" />
+<!--     <link rel="canonical" href="https://appspages.online/" /> -->
+<?= '<link rel="canonical" href="' . htmlspecialchars($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8') . '" />' ?>
+
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=5.0, width=device-width" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
