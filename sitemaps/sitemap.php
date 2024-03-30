@@ -1,14 +1,15 @@
 <?php
-// Fetch JSON data from the URLs
-$urls = [
-    'https://ws2-cache.aptoide.com/api/7/listApps?limit=1000&offset=2&sort=trending60d',
-    'https://ws2-cache.aptoide.com/api/7/listApps?limit=1000&offset=300&sort=trending60d',
-    'https://ws2-cache.aptoide.com/api/7/listApps?limit=1000&offset=4&sort=trending60d'
-];
+// Number of apps per page
+$limit = 100;
 
+// Initial offset
+$offset = 2;
+
+// Fetch JSON data from the URLs
 $allData = [];
 
-foreach ($urls as $url) {
+do {
+    $url = "https://ws2-cache.aptoide.com/api/7/listApps?limit=$limit&offset=$offset&sort=trending60d";
     $json = file_get_contents($url);
     $data = json_decode($json, true);
 
@@ -16,7 +17,11 @@ foreach ($urls as $url) {
     if ($data && isset($data['datalist']['list']) && !empty($data['datalist']['list'])) {
         $allData = array_merge($allData, $data['datalist']['list']);
     }
-}
+
+    // Update offset for the next iteration
+    $offset = $data['datalist']['next'] ?? null;
+
+} while ($offset !== null);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
