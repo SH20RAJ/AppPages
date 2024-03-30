@@ -27,7 +27,10 @@
               <a href="/assets/contact.php">Feedback</a>
             </li>
               <li>
-              <a href="https://codexdindia.blogspot.com/2024/02/keyboard-shortcut-showdown-mac-vs.html" rel="dofolllow">CXDIIN</a>
+              <a href="https://codexdindia.blogspot.com/" rel="dofolllow">CXDIIN</a>
+            </li>
+              <li>
+              <a href="https://visitorbadge.io/status?path=appspages.online"><img src="https://api.visitorbadge.io/api/combined?path=appspages.online&labelColor=%2368cb5b&countColor=%23ffffff&style=flat" /></a>
             </li>
           </ul>
           <div class="social" title="Read Us">
