@@ -19,7 +19,7 @@ do {
     // Check if data was successfully retrieved
     if ($data) {
         $allData = array_merge($allData, $data['datalist']['list']);
-        $totalUrls += $data['datalist']['next'];
+        $totalUrls += $data['datalist']['count'];
     }
 
     // Update offset for the next iteration
