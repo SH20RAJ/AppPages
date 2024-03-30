@@ -50,7 +50,7 @@ $data = $data['datalist']['list'];
 foreach ($data as $app) {
     $appName = $app['name'];
     $packageName = $app['package'];
-    $appIcon = $app['icon'];
+    $appIcon = $app['icon']."?w=128";
     $developer = bytesToMB($app['size']).'mb';
     $rating = $app['stats']['rating']['avg'];
     $uname = $app['uname'];
