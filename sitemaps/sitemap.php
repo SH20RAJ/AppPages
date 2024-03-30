@@ -5,6 +5,7 @@ $limit = 100;
 // Initial offset
 $offset = 0;
 
+$total = ($_GET['total'])?$_GET['total']:10000;
 // Total URLs fetched
 $totalUrls = 0;
 
@@ -30,7 +31,7 @@ do {
         break;
     }
 
-} while ($totalUrls < 1000);
+} while ($totalUrls < $total);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
