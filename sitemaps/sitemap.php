@@ -1,6 +1,6 @@
 <?php
 // Number of apps per page
-$limit = 10;
+$limit = 100;
 
 // Initial offset
 $offset = 2;
