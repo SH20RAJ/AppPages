@@ -43,7 +43,7 @@ $host = $_SERVER['HTTP_HOST'];
 foreach ($allData as $item) {
     $uname = $item['uname'];
     // Construct URL using current host and path
-    $loc = "https://$host/app/$uname";
+    $loc = "https://appspages.online/app/$uname";
 
     // Add URL to the sitemap
     $xml .= '
