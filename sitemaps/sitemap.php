@@ -25,16 +25,25 @@ do {
     // Update offset for the next iteration
     $offset = $data['datalist']['next'] ?? null;
 
-} while ($totalUrls < 10000);
+    // Stop if total URLs reaches 10,000
+    if ($totalUrls >= 10000) {
+        break;
+    }
+
+} while ( $totalUrls < $data['datalist']['total']);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
+// Get the current host
+$host = $_SERVER['HTTP_HOST'];
+
 // Iterate through each item in the combined list
 foreach ($allData as $item) {
     $uname = $item['uname'];
-    $loc = "https://appspages.online/app/$uname";
+    // Construct URL using current host and path
+    $loc = "https://$host/app/$uname";
 
     // Add URL to the sitemap
     $xml .= '
