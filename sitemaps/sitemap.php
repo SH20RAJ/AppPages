@@ -25,12 +25,12 @@ do {
     // Update offset for the next iteration
     $offset = $data['datalist']['next'] ?? null;
 
-    // Stop if total URLs reaches 10,000
-    if ($totalUrls >= 10000) {
+    // Stop if total URLs reaches the total from API
+    if ($totalUrls >= $data['datalist']['total']) {
         break;
     }
 
-} while ( $totalUrls < $data['datalist']['total']);
+} while ($totalUrls < 10000);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
