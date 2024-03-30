@@ -3,7 +3,7 @@
 $limit = 100;
 
 // Initial offset
-$offset = 2;
+$offset = 0;
 
 // Total URLs fetched
 $totalUrls = 0;
@@ -30,7 +30,7 @@ do {
         break;
     }
 
-} while ($totalUrls < 10000);
+} while ($totalUrls < 1000);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -43,7 +43,7 @@ $host = $_SERVER['HTTP_HOST'];
 foreach ($allData as $item) {
     $uname = $item['uname'];
     // Construct URL using current host and path
-    $loc = "https://appspages.online/app/$uname";
+    $loc = "https://$host/app/$uname";
 
     // Add URL to the sitemap
     $xml .= '
