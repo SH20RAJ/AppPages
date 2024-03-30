@@ -4,7 +4,7 @@
 	<ShortName>AppsPages.online</ShortName>
 	<Description>AppsPages.online Search</Description>
 	<Contact>mail@appspages.online</Contact>
-	<Url type="text/html" template="https://an1.comsearch/{searchTerms}&amp;do=search&amp;subaction=search" />
+	<Url type="text/html" template="https://<?php echo $_SERVER['HTTP_HOST'] ?>/search.php?q={searchTerms}&do=search&subaction=search" />
 	<LongName>AppsPages.online Search</LongName>
 	<Image height="32" width="32" type="image/png">https://appspages.online/logo.png</Image>
 	<Image height="32" width="32" type="image/vnd.microsoft.icon">https://appspages.online/logo.png</Image>
