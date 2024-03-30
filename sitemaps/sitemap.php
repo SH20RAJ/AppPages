@@ -1,9 +1,12 @@
 <?php
 // Number of apps per page
-$limit = 100;
+$limit = 10;
 
 // Initial offset
 $offset = 2;
+
+// Total URLs fetched
+$totalUrls = 0;
 
 // Fetch JSON data from the URLs
 $allData = [];
@@ -16,12 +19,13 @@ do {
     // Check if data was successfully retrieved
     if ($data && isset($data['datalist']['list']) && !empty($data['datalist']['list'])) {
         $allData = array_merge($allData, $data['datalist']['list']);
+        $totalUrls += count($data['datalist']['list']);
     }
 
     // Update offset for the next iteration
     $offset = $data['datalist']['next'] ?? null;
 
-} while ($offset !== null);
+} while ($offset !== null && $totalUrls < 10000);
 
 // Start building the sitemap
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
