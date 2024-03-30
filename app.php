@@ -74,6 +74,9 @@ if(isset($_GET['p'])){
                               <meta itemprop="position" content="3">
                               <a href="/apps/" itemprop="item"><span itemprop="name">Apps</span></a>
                            </li>
+                            <li>
+                             <a href="https://visitorbadge.io/status?path=appspages.online%2Fapp%2F<?php echo $_GET['p'] ;?>"><img src="https://api.visitorbadge.io/api/combined?path=appspages.online%2Fapp%2F<?php echo $_GET['p'] ;?>&labelColor=%2368cb5b&countColor=%23ffffff&style=flat" /></a>
+                            </li>
                         </ul>
                         <h1 class="title xxlgf" itemprop="headline"><?php echo $appName ;?></h1>
                         <meta itemprop="name" content="<?php echo $appName ;?>">
