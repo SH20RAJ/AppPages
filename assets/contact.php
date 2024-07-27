@@ -16,7 +16,7 @@ $html = <<<HTML
 
   <h2>Contact Us</h2>
   <p>If you have any questions or concerns regarding our Terms of Service, please contact us using the provided contact details.</p>
-  mail@appspages.online
+  mail@appspages.sh20raj.com
   </div>
 
   HTML;

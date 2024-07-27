@@ -8,7 +8,7 @@ $extendsvg = '<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0
 
         <h1 class="logo">
           <div class="logo">
-         <a href="../"><img src="https://appspages.online/logo.png" style="width:40px;margin-top:10px;"/></a>
+         <a href="../"><img src="https://appspages.sh20raj.com/logo.png" style="width:40px;margin-top:10px;"/></a>
        </div>
           
         </h1>
@@ -303,7 +303,7 @@ $menuItems = [
                 <a href="assets/privacy-policy.php">Privacy Policy</a>
               </li>
               <li>
-                <a href="mailto:mail@appspages.online">Feedback</a>
+                <a href="mailto:mail@appspages.sh20raj.com">Feedback</a>
               </li>
             </ul>
             <div class="head_menu_s_foot d-lg-none">

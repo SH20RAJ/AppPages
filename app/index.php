@@ -1,6 +1,6 @@
 <?php
 
- $url = 'https://appspages.online/api/aptoide.php?app_id='.$_GET['p'];
+ $url = 'https://appspages.sh20raj.com/api/aptoide.php?app_id='.$_GET['p'];
 // Replace with the URL of your JSON file
 // Fetch the JSON data
 
@@ -77,7 +77,7 @@ if(isset($_GET['p'])){
                               <a href="/apps/" itemprop="item"><span itemprop="name">Apps</span></a>
                            </li>
                          <li>
-                          <a href="https://visitorbadge.io/status?path=appspages.online%2Fapp%2F<?php echo $_GET['p'] ;?>"><img src="https://api.visitorbadge.io/api/combined?path=appspages.online%2Fapp%2F<?php echo $_GET['p'] ;?>&labelColor=%2368cb5b&countColor=%23ffffff&style=flat" /></a>
+                          <a href="https://visitorbadge.io/status?path=appspages.sh20raj.com%2Fapp%2F<?php echo $_GET['p'] ;?>"><img src="https://api.visitorbadge.io/api/combined?path=appspages.sh20raj.com%2Fapp%2F<?php echo $_GET['p'] ;?>&labelColor=%2368cb5b&countColor=%23ffffff&style=flat" /></a>
                           
                          </li>
                         </ul>

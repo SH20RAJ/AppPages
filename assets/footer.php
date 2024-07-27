@@ -7,7 +7,7 @@
               <path fill="#68CB5B" d="M6,8l3.5-8h-6L0,8H6z"></path>
             </svg>
           </a>
-          <span class="copyright_i1 fbold">2023. &copy; AppsPages.online</span>
+          <span class="copyright_i1 fbold">2023. &copy; appspages.sh20raj.com</span>
           <span class="copyright_i2">Games, programs for android</span>
         </div>
       </div>
@@ -30,7 +30,7 @@
               <a href="https://codexdindia.blogspot.com/" rel="dofolllow">CXDIIN</a>
             </li>
               <li>
-              <a href="https://visitorbadge.io/status?path=appspages.online"><img src="https://api.visitorbadge.io/api/combined?path=appspages.online&labelColor=%2368cb5b&countColor=%23ffffff&style=flat" /></a>
+              <a href="https://visitorbadge.io/status?path=appspages.sh20raj.com"><img src="https://api.visitorbadge.io/api/combined?path=appspages.sh20raj.com&labelColor=%2368cb5b&countColor=%23ffffff&style=flat" /></a>
             </li>
           </ul>
           <div class="social" title="Read Us">
